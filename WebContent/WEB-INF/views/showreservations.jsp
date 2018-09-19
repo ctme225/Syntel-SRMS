@@ -54,7 +54,7 @@
 			vertical-align: middle;
 		}
 	    .select{
-	   		background-color:green;
+	   		border:solid 3px green;
 	    }
 	    #SRMS {
 	        font-size: 30px;
@@ -152,7 +152,7 @@
                     <div class="row" style="height:29px;"></div>
                     <div class=row>
                     	<div id='external-events' style="width:200px; margin-left:20px">
-							<div class="dropdown fc-event">
+							<div class="dropdown">
 	                        	<button class="btn btn-danger btn-sm dropdown-toggle" style="width:100%;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	                            	${defaultResType}
 	                        	</button>
@@ -230,7 +230,6 @@
 						    <a class="dropdown-item Sd-Occur" href="#">Single Day</a>
 						    <a class="dropdown-item Da-Occur" href="#">Daily</a>
 						    <a class="dropdown-item We-Occur" href="#">Weekly</a>
-						    <a class="dropdown-item Mo-Occur" href="#">More Options</a>
 						  </div>
 						</div>
 		      		
@@ -272,7 +271,7 @@
 		       	 
 		       	 </div>
 		       	 <div class="col-12">
-                      Comments: <textarea class="form-control" name= "description" id="exampleFormControlTextarea1" rows="2"></textarea>
+                      Comments: <textarea class="form-control" name= "description" id="exampleFormControlTextarea1"> </textarea>
 
                   </div><br>
                   
@@ -333,7 +332,7 @@
 		        <button type="button" class="close" aria-label="Close">
 		          <button type="button" class="btn btn-danger deleteButton">Delete this Booking</button>
 		          	<div id="deleteBooking" style="display: none">
-					  <div class="list-of-emails">
+					  <div class="are-you-sure-delete">
 					  	<p>Are you sure you want to delete this booking??</p>
 					  	<div class="row">
 					  		<div class="col">
@@ -375,28 +374,25 @@
 				  <div class="emailStuff" style="display: none">
 					  <hr>
 					  <div class=row>
-					  	<div class="col">
+					  	<div class="col-4">
 					  	   <input type="email" class="form-control" id="emailforinvites" placeholder="name@example.com"/>
 					  	 </div>
-					  	 <div class="col">
+					  	 <div class="col-2">
 					  	   <button type="button" class="btn btn-primary add-new-email">Add</button>
 					  	 </div>
-					  </div>
-					  <br>
-					  <div class=row>
-					  	<div class="col">
-					  	   <button type="button" class="btn btn-primary email-popover" data-container="body" data-toggle="popover" data-placement="left">
-						  		View Email List
+					  	<div class="col-3">
+					  	   <button type="button" class="btn btn-primary email-popover" data-container="body" data-toggle="popover" data-placement="top">
+						  		View List
 							</button>
 							<div id="popover_content_wrapper" style="display: none">
-							  <div class="list-of-emails" style="height:200px; overflow-y:auto">
+							  <div class="list-of-emails" style="overflow-y:auto">
 							  	
 							  </div>
 							</div>
 					  	   <input type="hidden" id="input-field-for-list" name="inputEmails" value=""/>
 					  	 </div>
-					  	 <div class="col">
-					  	   <button type="button" class="btn btn-primary send-emails-button">Send Emails</button>
+					  	 <div class="col-3">
+					  	   <button type="button" class="btn btn-primary send-emails-button">Send</button>
 					  	 </div>
 					  </div>
 					  <hr>
@@ -409,8 +405,8 @@
 		        
 			      </div>
 			      <div class="modal-footer">
+			      	<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 			      	<button type="submit" class="btn btn-primary">Save changes</button>
-			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 			      </div>
 		      </form>
 		    </div>
@@ -473,39 +469,45 @@
         }
         
         if('${defaultResType}' == "Scrum"){
-            console.log($(".resNameButton"));
+            $(".fc-event").css('background','#001f3f');
             for(var i =0; i < $(".resNameButton").length; i++){
                 $(".resNameButton")[i].childNodes[1].src = "resources/images/scrum.png";
             }
         }
         if('${defaultResType}' == "Class"){
-            console.log($(".resNameButton"));
+            $(".fc-event").css('background','#85144b');
             for(var i =0; i < $(".resNameButton").length; i++){
                 $(".resNameButton")[i].childNodes[1].src = "resources/images/class.png";
             }
         }
         if('${defaultResType}' == "Board"){
-            console.log($(".resNameButton"));
+            $(".fc-event").css('background','#FF4136');
             for(var i =0; i < $(".resNameButton").length; i++){
                 $(".resNameButton")[i].childNodes[1].src = "resources/images/board.png";
             }
         }
         if('${defaultResType}' == "Rec"){
-            console.log($(".resNameButton"));
+            $(".fc-event").css('background','#771C1C');
             for(var i =0; i < $(".resNameButton").length; i++){
                 $(".resNameButton")[i].childNodes[1].src = "resources/images/rec.png";
             }
         }
         if('${defaultResType}' == "break"){
-            console.log($(".resNameButton"));
+            $(".fc-event").css('background','#B10DC9');
             for(var i =0; i < $(".resNameButton").length; i++){
                 $(".resNameButton")[i].childNodes[1].src = "resources/images/rec2.png";
             }
         }
         if('${defaultResType}' == "Lounge"){
-            console.log($(".resNameButton"));
+            $(".fc-event").css('background','#FF851B');
             for(var i =0; i < $(".resNameButton").length; i++){
                 $(".resNameButton")[i].childNodes[1].src = "resources/images/rec3.png";
+            }
+        }
+        if('${defaultResType}' == "Conference"){
+            $(".fc-event").css('background','#3D9970');
+            for(var i =0; i < $(".resNameButton").length; i++){
+                $(".resNameButton")[i].childNodes[1].src = "resources/images/conference.png";
             }
         }
 
@@ -600,7 +602,8 @@
 						color: '${bkg.color}',
 						description: '${bkg.description}',
 						id:'${bkg.bookingId}',
-						resName: '${bkg.resName}'
+						resName: '${bkg.resName}',
+						textColor: 'white'
 						
 					}<c:if test="${not status.last}">,</c:if>
 			
