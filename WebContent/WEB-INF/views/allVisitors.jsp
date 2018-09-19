@@ -129,10 +129,12 @@ table {
 	margin: 0 auto;
 }
 
-tr:nth-child(even) {background-color: #f2f2f2;}
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
 
 #checkbutton {
-	background-color:red;
+	background-color: red;
 }
 </style>
 </head>
@@ -140,8 +142,9 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 <body>
 
 
-	<a type="button" href=landing style="background-color: gray; color:white;" class ="btn btn-lg btn-block">Visitor
-		Services</a>
+	<a type="button" href=landing
+		style="background-color: black; color: white;"
+		class="btn btn-lg btn-block">Demo Visitor Services</a>
 	<div>
 		<div>
 
@@ -171,8 +174,9 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 						<td>${vis.checkIn}</td>
 
 						<td><c:if test="${vis.checkOut == null}">
-								<a href="CheckOutVis/${vis.visId}" id="checkbutton" type="button" class="btn btn-danger btn-lg">Check
-									Out</a>
+								<a href="CheckOutVis/${vis.visId}" id="checkbutton"
+									type="button"
+									class="btn btn-danger btn-block btn-lg fa fa-sign-out-alt"> </a>
 							</c:if> <c:if test="${vis.checkOut != null}">
 				${vis.checkOut}	
 			</c:if></td>
