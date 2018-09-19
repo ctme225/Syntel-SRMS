@@ -44,12 +44,6 @@ body {
       padding-top: 150px;
       padding-bottom: 100px;
       color: white;
-      background: -webkit-linear-gradient(-45deg, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
-      background: linear-gradient(-45deg, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-      background-size: 400% 400%;
-      -webkit-animation: Gradient 15s ease infinite;
-      -moz-animation: Gradient 15s ease infinite;
-      animation: Gradient 15s ease infinite;
       }
 
     @-webkit-keyframes Gradient {
@@ -201,7 +195,7 @@ body {
 <header class="masthead">
 <div class = "checkin-page">
 	<div class = "form" style = "opacity=2.5">
-	 <img src="resources/images/book-logo.png" alt="logo" style="height:65%; width:65%; padding-bottom:30px; "/>
+	 <img src="resources/images/vm_logo.png" alt="logo" style="height:65%; width:65%; padding-bottom:30px; "/>
 	 <form:form action="saveVisitor" method="post">
 	 <div class = "input-group mb-3">
 		<div class = "input-group-prepend">

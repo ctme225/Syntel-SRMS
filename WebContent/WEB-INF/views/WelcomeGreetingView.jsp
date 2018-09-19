@@ -88,13 +88,7 @@
       padding-top: 150px;
       padding-bottom: 100px;
       color: white;
-    
-      background: -webkit-linear-gradient(-45deg, #434343, #000000);
-      background: linear-gradient(-45deg, #434343, #000000); 
-      background-size: 400% 400%;
-      -webkit-animation: Gradient 15s ease infinite;
-      -moz-animation: Gradient 15s ease infinite;
-      animation: Gradient 15s ease infinite;
+   
       }
 
     @-webkit-keyframes Gradient {
@@ -176,7 +170,7 @@
           <div class="col-lg-7 my-auto">
             <div class="header-content mx-auto">
                 <h1 class = "mb-5">Thanks for Checking In!</h1>
-                <img src="resources/images/book-logo.png" alt="logo" style="height:65%; width:65%; padding-bottom:0px; "/>
+                <img src="resources/images/vm_logo.png" alt="logo" style="height:65%; width:65%; padding-bottom:0px; "/>
                 <br>
             </div>
           </div>

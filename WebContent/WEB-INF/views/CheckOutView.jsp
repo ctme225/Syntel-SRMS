@@ -200,7 +200,7 @@ body {
 <header class = "masthead">
 <div class = "checkout-page">
 	<div class = "form" style = "opacity=2.5">
-		<img src="resources/images/book-logo.png" alt="logo" style="height:65%; width:65%; padding-bottom:80px; "/>
+		<img src="resources/images/vm_logo.png" alt="logo" style="height:65%; width:65%; padding-bottom:80px; "/>
 		<form action="CheckOut" method="post">
 		<div class = "container">
 		<div class = "input-group mb-3">
