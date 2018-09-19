@@ -27,6 +27,7 @@ public class BookingService {
     	LocationModel lm = new LocationDAO().getLocation((Integer)req.getSession().getAttribute("userLocViewId"));
 		String location = lm.getLocName() + "-"+lm.getLocCity()+","+lm.getLocState();
 		modelList.addAttribute("myLocation",location);
+		modelList.addAttribute("mylocationmodel",lm);
 		String user = (String)req.getSession().getAttribute("name");
 		modelList.addAttribute("myUser", user);
         // Grab locations
@@ -172,6 +173,7 @@ public class BookingService {
 		model.addAttribute("myLocation",loco);
 		String user = (String)request.getSession().getAttribute("name");
 		model.addAttribute("myUser", user);
+		model.addAttribute("mylocationmodel",lm);
 		
 		int userLocViewId = (Integer)request.getSession().getAttribute("userLocViewId");
 		if(userLocViewId == 0)
@@ -365,8 +367,6 @@ public class BookingService {
 		
 		return new ModelAndView("redirect:/reserve");
 	}
-    
-    
     
     
     

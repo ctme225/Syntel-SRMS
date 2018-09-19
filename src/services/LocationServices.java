@@ -25,6 +25,8 @@ public class LocationServices {
     	LocationModel lm = new LocationDAO().getLocation((Integer)request.getSession().getAttribute("userLocViewId"));
 		String location = lm.getLocName() + "-"+lm.getLocCity()+","+lm.getLocState();
 		model.addAttribute("myLocation",location);
+		model.addAttribute("mylocationmodel",lm);
+		
 		String user = (String)request.getSession().getAttribute("name");
 		model.addAttribute("myUser", user);
 		List<LocationModel> list = new LocationDAO().getAllLocations();

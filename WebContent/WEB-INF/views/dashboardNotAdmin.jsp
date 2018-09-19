@@ -15,7 +15,7 @@ org.springframework.web.context.support.WebApplicationContextUtils"%>
         <link rel="stylesheet" href="resources\css\animate.css"/>
         <link rel="stylesheet" href="resources\css\bootstrap.css"/>
         <link rel="stylesheet" href="resources\css\all.css"/>
-
+		<jsp:include page="navbarnotadmin.jsp" />
         <style>
             body{
                 background: #F5F5F5;
@@ -162,44 +162,6 @@ org.springframework.web.context.support.WebApplicationContextUtils"%>
         </style>
     </head>
     <body>
-        <div id="wrapper" class="animate">
-            <nav id= "navigation" class="navbar header-top fixed-top navbar-expand-lg  navbar-dark ">
-                <span id="hamBurgerMenu" class="navbar-toggler-icon light leftmenutrigger" ></span>
-               <a class="navbar-brand" style = "display: inline-block;" href="home"><img src="resources/images/book-logo.png" alt="logo" style="height:25%; width:25%; margin-bottom:0px; "/></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarText">
-                    <ul class="navbar-nav animate side-nav" id="ulSideNav">
-                        <li class="nav-item">
-                            <a class="nav-link" href=util>Reports</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href=reserve>View Reservations</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav ml-md-auto d-md-flex">
-                        <li class="nav-item" id="show-op">
-                            <a class="nav-link" href=user>User Options</a>
-                        </li>
-                        <li class="nav-item" id="show-op">
-                            <a class="nav-link" href="#">Logout</a>
-                        </li>
-                        <li class="nav-item" id="dropdown">
-                            <div class="dropdown">
-                                <a class="nav-link dropdown-toggle" style="margin-left: 100px;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><i class = "fa fa-user-circle" style = "font-size: 24px;"></i></a>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href= user >User Options</a>
-                                    <a class="dropdown-item" href="logout">Logout</a>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-				<div class = "text-light nav-item" >${myUser}</div>
-            </nav>
-        </div>
         <div class="container text-center">
             <header class="masthead">
                 <div class="container d-flex justify-content-center">
@@ -219,7 +181,7 @@ org.springframework.web.context.support.WebApplicationContextUtils"%>
                                 </div>
                                 <div class = "col-sm">
                                     <div class = "col-sm">
-                                        <a type="button" id="userop" href = user  class="btn btn-dark btn-lg btn-block"><i class = "fa fa-id-card" style = "font-size: 48px; text-shadow:2px 2px 4px #000000;"></i> User Options</a>
+                                        <a type="button" id="userop" href = usernotadmin  class="btn btn-dark btn-lg btn-block"><i class = "fa fa-id-card" style = "font-size: 48px; text-shadow:2px 2px 4px #000000;"></i> User Options</a>
                                     </div>
                                 </div>
                             </div>

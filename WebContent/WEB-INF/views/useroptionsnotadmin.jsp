@@ -3,6 +3,7 @@
 <%@page import="java.util.*, org.springframework.web.context.WebApplicationContext,
 org.springframework.web.context.support.WebApplicationContextUtils"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en" dir="ltr">
@@ -15,11 +16,14 @@ org.springframework.web.context.support.WebApplicationContextUtils"%>
         <link rel="stylesheet" href="resources\css\animate.css"/>
         <link rel="stylesheet" href="resources\css\bootstrap.css"/>
         <link rel="stylesheet" href="resources\css\all.css"/>
-
+		<jsp:include page="navbarnotadmin.jsp" />
         <style>
             body{
                 background: #F5F5F5;
                 overflow-y: hidden;
+            }
+            .modal{
+            	top:130px;
             }
             #SRMS {
                 font-size: 30px;
@@ -37,13 +41,9 @@ org.springframework.web.context.support.WebApplicationContextUtils"%>
                 display: none;
             }
             #wrapper {
-                padding: 90px 15px 0px 15px;
+                padding: 95px 15px 0px 15px;
             }
-            .btn{
-                padding: 30px;
-                margin: 10px;
-                border-radius: square; 
-            }
+          
             .containsIt{
                 border-color: #383838;
             }
@@ -59,7 +59,7 @@ org.springframework.web.context.support.WebApplicationContextUtils"%>
                     display: none;
                 }
                 #wrapper {
-                    padding:50px 15px 0px 15px;
+                    padding:95px 15px 0px 15px;
                 }
                 .navbar-nav.side-nav.open {
                     left: 0;
@@ -104,104 +104,121 @@ org.springframework.web.context.support.WebApplicationContextUtils"%>
                 .removeCol{
                     display: none;
                 }
-                .btn{
-                    margin: 5px;
-                    padding: 10px;
-                }
+                
             }
             @media (max-width: 600px){ .welcome-tag{ display: none} }
 
-            .masthead {
-                position: relative;
-                width: 100%;
-                height: 80%;
-                padding: 15rem 0;
-                background: linear-gradient(to bottom, rgba(22, 22, 22, 0.1) 0%, rgba(22, 22, 22, 0.5) 75%, #161616 100%);
-                background-position: center;
-                background-repeat: no-repeat;
-                background-attachment: scroll;
-                -webkit-background-size: cover;
-                -moz-background-size: cover;
-                -o-background-size: cover;
-                background-size: cover;
-                }
-
-            .masthead h1 {
-                padding: 60px;
-                font-family: 'Varela Round';
-                font-size: 2.5rem;
-                line-height: 2.5rem;
-                letter-spacing: 0.8rem;
-                background: -webkit-linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
-                -webkit-text-fill-color: transparent;
-                -webkit-background-clip: text;
-                }
-
-            @media (min-width: 768px) {
-                .masthead h1 {
-                    font-size: 4rem;
-                    line-height: 4rem;
-                }
-            }
-
-            @media (min-width: 992px) {
-                .masthead {
-                    height: 100vh;
-                    padding: 0;
-                }
-                .masthead h1 {
-                    font-size: 6.5rem;
-                    line-height: 6.5rem;
-                    letter-spacing: 0.8rem;
-                }
-                .masthead h2 {
-                    max-width: 30rem;
-                    font-size: 1.25rem;
-                }
-            }
         </style>
     </head>
     <body>
-        <div id="wrapper" class="animate">
-            <nav id= "navigation" class="navbar header-top fixed-top navbar-expand-lg  navbar-dark ">
-                <span id="hamBurgerMenu" class="navbar-toggler-icon light leftmenutrigger" ></span>
-               <a class="navbar-brand" style = "display: inline-block;" href="home"><img src="resources/images/book-logo.png" alt="logo" style="height:25%; width:25%; margin-bottom:0px; "/></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarText">
-                    <ul class="navbar-nav animate side-nav" id="ulSideNav">
-                        <li class="nav-item">
-                            <a class="nav-link" href=util>Reports</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href=reserve>View Reservations</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav ml-md-auto d-md-flex">
-                        <li class="nav-item" id="show-op">
-                            <a class="nav-link" href=user>User Options</a>
-                        </li>
-                        <li class="nav-item" id="show-op">
-                            <a class="nav-link" href="#">Logout</a>
-                        </li>
-                        <li class="nav-item" id="dropdown">
-                            <div class="dropdown">
-                                <a class="nav-link dropdown-toggle" style="margin-left: 100px;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><i class = "fa fa-user-circle" style = "font-size: 24px;"></i></a>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href=user>User Options</a>
-                                    <a class="dropdown-item" href="logout">Logout</a>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-              <div class = "text-light nav-item" >${myUser}</div>
-            </nav>
+        
+        <div class= "container">
+        	<table class="table">
+			  <thead class="thead-dark text-center">
+			    <tr>
+			      <th scope="col" colspan="4">User Options</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr>
+			      <th scope="row">Name: </th>
+			      <td>${userInfo.name}</td>
+			      <th>UserName: </th>
+			      <td>${userInfo.userName}</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">Email: </th>
+			      <td>${userInfo.userEmail}</td>
+			      <th>Password: </th>
+			      <td>${userInfo.userPassword}</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">Location: </th>
+			      <td>${userLocation}</td>
+			      <th>Phone Numer:</th>
+			      <td>${userInfo.userPhone}</td>
+			    </tr>
+			    <tr>
+			      <th scope="row"></th>
+			      <td></td>
+			      <th></th>
+			      <td>
+			      	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+					  Edit Profile
+					</button>
+			      </td>
+			    </tr>
+			  </tbody>
+			</table>
+        
         </div>
+        
+		      <!-- Modal -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLabel">Edit Profile</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <form action="updateUserOptions" method="GET">
+		      <div class="modal-body">
+		        
+				  <div class="form-row">
+				    <div class="col">
+				      <input type="text" class="form-control" placeholder="Name" value="${userInfo.name}" readonly="readonly">
+				    </div>
+				    <div class="col">
+				      <input type="text" class="form-control" name="userName" placeholder="UserName" value="${userInfo.userName}">
+				    </div>
+				  </div>
+				  <br>
+				  <div class="form-row">
+				    <div class="col">
+				      <input type="text" class="form-control" name="userEmail" placeholder="Email" value="${userInfo.userEmail}">
+				    </div>
+				    <div class="col">
+				      <input type="text" class="form-control" name="userPass" placeholder="Pasword" value="${userInfo.userPassword}">
+				    </div>
+				  </div>
+				  <br>
+				  
+				  <div class="form-row">
+				    <div class="col">
+				      <div class="dropdown">
+						  <button class="btn btn-primary dropdown-toggle locDropdown" style="width:220px; font-size: 13px;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						    ${userLocation}
+						  </button>
+						  <input type="hidden" id="selectedLocation" name="selectedLocation" value="${userLocation}"/>
+						  <div class="dropdown-menu" style="width:220px; font-size: 11px;" aria-labelledby="dropdownMenuButton">
+						    <c:forEach var= "allloc" items="${allLocation}">
+						    		<a class="dropdown-item chooseLocation" href="#">${allloc.locName}-${allloc.locCity},${allloc.locState}</a>
+                            </c:forEach>
+						  </div>
+						</div>
+				    </div>
+				    <div class="col">
+				      <input type="text" class="form-control" name="userPhone" placeholder="Phone Number" value="${userInfo.userPhone}">
+				    </div>
+				  </div>
+				  
+				
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		        <button type="submit" class="btn btn-primary">Save changes</button>
+		      </div>
+		      </form>
+		    </div>
+		  </div>
+		</div>
+		        
+        <script src="resources/js/popper.js"></script>
         <script src="resources/js/jquerylib.js"></script>
         <script src="resources/js/bootstrap.js"></script>
+        
 
         <script type="text/javascript">
             $(document).ready(function() {
@@ -230,8 +247,12 @@ org.springframework.web.context.support.WebApplicationContextUtils"%>
                 $("#userop").on('click',function(){
                      document.location.href = $(this).val();         
                 });
+                $(".chooseLocation").click(function(){
+                	$(".locDropdown").html($(this).html());
+                	$("#selectedLocation").val($(this).html());
+                });
             });
         </script>
-        <h1>This is user option page</h1>
+        
     </body>
 </html>

@@ -164,7 +164,9 @@
 	                    	</div>
 	                    	<c:forEach items="${resources}" var="i">
 	                            <div data-room='{"name":"${i.resource.resName}","img":"proj.png","num":${i.resource.roomNumber},"feats":[<c:forEach var="j" items="${i.features}" varStatus="jstatus">{"count":${j.count},"type":"${j.name}","image":"${j.img}"}<c:if test="${not jstatus.last}">,</c:if></c:forEach>]}'
-	                             class="fc-event resNameButton">${i.resource.resName}
+	                             class="fc-event resNameButton">
+	                             <img class="theImageToShow" src="" alt="Name: " style="height: 40px; width: 40px; background: white">
+	                             ${i.resource.resName}
 	                            </div>
 	                            <input type="hidden" value="${i.resource.resId}"/>
 	                        </c:forEach>
@@ -469,6 +471,48 @@
                 "</div>";
             return (html+middle+end);
         }
+        
+        if('${defaultResType}' == "Scrum"){
+            console.log($(".resNameButton"));
+            for(var i =0; i < $(".resNameButton").length; i++){
+                $(".resNameButton")[i].childNodes[1].src = "resources/images/scrum.png";
+            }
+        }
+        if('${defaultResType}' == "Class"){
+            console.log($(".resNameButton"));
+            for(var i =0; i < $(".resNameButton").length; i++){
+                $(".resNameButton")[i].childNodes[1].src = "resources/images/class.png";
+            }
+        }
+        if('${defaultResType}' == "Board"){
+            console.log($(".resNameButton"));
+            for(var i =0; i < $(".resNameButton").length; i++){
+                $(".resNameButton")[i].childNodes[1].src = "resources/images/board.png";
+            }
+        }
+        if('${defaultResType}' == "Rec"){
+            console.log($(".resNameButton"));
+            for(var i =0; i < $(".resNameButton").length; i++){
+                $(".resNameButton")[i].childNodes[1].src = "resources/images/rec.png";
+            }
+        }
+        if('${defaultResType}' == "break"){
+            console.log($(".resNameButton"));
+            for(var i =0; i < $(".resNameButton").length; i++){
+                $(".resNameButton")[i].childNodes[1].src = "resources/images/break.png";
+            }
+        }
+        if('${defaultResType}' == "Lounge"){
+            console.log($(".resNameButton"));
+            for(var i =0; i < $(".resNameButton").length; i++){
+                $(".resNameButton")[i].childNodes[1].src = "resources/images/rec3.png";
+            }
+        }
+
+        $(document).on("click", ".delete-email", function() {
+               console.log($(this).parent());
+               $(this).parent().remove();
+        });
 			console.log('${loc}');
 			$(".Da-Occur, .We-Occur").click(function(){
 				$("#occurDD").html($(this).html());

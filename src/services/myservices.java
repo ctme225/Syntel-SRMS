@@ -97,6 +97,7 @@ public class myservices {
 		String location = lm.getLocName() + "-"+lm.getLocCity()+","+lm.getLocState();
 		model.addAttribute("myUser", user);
 		model.addAttribute("myLocation",location);
+		model.addAttribute("mylocationmodel",lm);
 		if(request.getSession().getAttribute("userType")=="Admin")
 		{
 			System.out.println("Inside Admin statement");
@@ -204,4 +205,48 @@ public class myservices {
         new UserDAO().updateUser(user);
         return new ModelAndView("redirect:/user");
     }
+	@RequestMapping(value = "/usernotadmin")
+    public String useroptionsnotadmin(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
+		
+		LocationModel lm = new LocationDAO().getLocation((Integer)request.getSession().getAttribute("userLocViewId"));
+		String loco = lm.getLocName() + "-"+lm.getLocCity()+","+lm.getLocState();
+		model.addAttribute("myLocation",loco);
+		model.addAttribute("mylocationmodel",lm);
+		
+		String userdata = (String)request.getSession().getAttribute("name");
+		model.addAttribute("myUser", userdata);
+		
+        int userid = (Integer)request.getSession().getAttribute("userId");
+        UsersModel user = new UserDAO().getUser(userid);
+        LocationModel location = new LocationDAO().getLocationwithID(user.getLocId());
+        List<LocationModel> allLoc = new LocationDAO().getAllLocations();
+        model.addAttribute("userLocation", location.getLocName()+"-" + location.getLocCity() + "," + location.getLocState());
+        model.addAttribute("userInfo", user);
+        model.addAttribute("allLocation", allLoc);
+        return "useroptionsnotadmin";
+    }
+	
+	@RequestMapping(value = "/updateUserOptionsnotadmin")
+    public ModelAndView updateUserOptionsnotadmin(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
+        int userid = (Integer)request.getSession().getAttribute("userId");
+        String selectedLocation = request.getParameter("selectedLocation");
+        
+        List<String> locSplit = Arrays.asList(selectedLocation.split("-"));
+        String locName = locSplit.get(0);
+        List<String> newLocSplit = Arrays.asList(locSplit.get(1).split(","));
+        String locCity = newLocSplit.get(0);
+        String locState = newLocSplit.get(1);
+        int loc = new LocationDAO().getLocIdWithAddress(locName, locCity, locState).getLocId();
+        request.getSession().setAttribute("userLocViewId", loc);
+        UserModel user = new UserModel();
+        user.setUserId(userid);
+        user.setLocId(loc);
+        user.setUserEmail(request.getParameter("userEmail"));
+        user.setUserPassword(request.getParameter("userPass"));
+        user.setUserName(request.getParameter("userName"));
+        user.setUserPhone(request.getParameter("userPhone"));
+        new UserDAO().updateUser(user);
+        return new ModelAndView("redirect:/usernotadmin");
+    }
 }
+
