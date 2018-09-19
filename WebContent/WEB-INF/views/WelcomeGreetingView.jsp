@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
+<<html>
 <head>
    <meta charset="ISO-8859-1">
     <title>
@@ -87,11 +88,7 @@
       padding-top: 150px;
       padding-bottom: 100px;
       color: white;
-      /*background: linear-gradient(to bottom, rgba(22, 22, 22, 0.1) 0%, rgba(22, 22, 22, 0.5) 75%, #161616 100%), url("../img/bg-masthead.jpg");
-      background: url("../img/bg-pattern.png"), #00ff37;
-      background: url("../img/bg-pattern.png"), -webkit-linear-gradient(to left, #932ac7, #dc2430);
-      background: url("../img/bg-pattern.png"), linear-gradient(to left, #73f708, #dc2430);I*/
-      /*background: #000000;  /* fallback for old browsers */
+    
       background: -webkit-linear-gradient(-45deg, #434343, #000000);
       background: linear-gradient(-45deg, #434343, #000000); 
       background-size: 400% 400%;

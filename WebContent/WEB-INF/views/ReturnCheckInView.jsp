@@ -208,7 +208,7 @@ body {
 		<br>
 		<span class="input-group-text"><i class="fa fa-user fa-fw"></i></span>
 		</div>
-		<input class="form-control" type="text" placeholder="Name" name="visName" class="col-lg-12" pattern="[a-zA-Z]+" required/>
+		<input class="form-control" type="text" placeholder="Name" name="visName" class="col-lg-12" pattern="[a-zA-Z ]+" required/>
 	</div>
 	<div class = "input-group mb-3">
 		<div class = "input-group-prepend">

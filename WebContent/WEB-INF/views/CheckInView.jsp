@@ -203,7 +203,7 @@ body {
 	 <img src="resources/images/book-logo.png" alt="logo" style="height:65%; width:65%; padding-bottom:80px; "/>
 	
 	<form action="CheckIn" method="post">
-	<div class = "container">
+	<div class = "container" >
 	<div class = "input-group mb-3">
 		<div class = "input-group-prepend">
 			<br>
