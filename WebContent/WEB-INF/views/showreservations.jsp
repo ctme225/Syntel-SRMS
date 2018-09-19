@@ -499,7 +499,7 @@
         if('${defaultResType}' == "break"){
             console.log($(".resNameButton"));
             for(var i =0; i < $(".resNameButton").length; i++){
-                $(".resNameButton")[i].childNodes[1].src = "resources/images/break.png";
+                $(".resNameButton")[i].childNodes[1].src = "resources/images/rec2.png";
             }
         }
         if('${defaultResType}' == "Lounge"){
