@@ -91,12 +91,7 @@
       background: url("../img/bg-pattern.png"), -webkit-linear-gradient(to left, #932ac7, #dc2430);
       background: url("../img/bg-pattern.png"), linear-gradient(to left, #73f708, #dc2430);I*/
       /*background: #000000;  /* fallback for old browsers */
-      background: -webkit-linear-gradient(-45deg, #434343, #000000);
-      background: linear-gradient(-45deg, #434343, #000000); 
-      background-size: 400% 400%;
-      -webkit-animation: Gradient 15s ease infinite;
-      -moz-animation: Gradient 15s ease infinite;
-      animation: Gradient 15s ease infinite;
+      background-color"white";
       }
 
     @-webkit-keyframes Gradient {
@@ -170,15 +165,14 @@
       } 
     }
   </style>
-  <body id="page-top">
+  <body >
 
     <header class="masthead">
       <div class="container h-100">
         <div class="row h-100">
           <div class="col-lg-7 my-auto">
             <div class="header-content mx-auto">
-                <h1 class = "mb-5">Sytnel Resource Management</h1>
-                <img src="resources/images/book-logo.png" alt="logo" style="height:65%; width:65%; padding-bottom:0px; "/>
+                <img src="resources/images/vm_logo.png" alt="logo" style="height:100%; width:100%; padding-bottom:0px; "/>
                 <br>
             </div>
           </div>
