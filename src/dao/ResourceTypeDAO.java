@@ -50,7 +50,7 @@ public class ResourceTypeDAO {
     // Given LocationID, returns a list of ResourceType Models with corresponding locID
     public List<ResourceTypeModel> getResourceTypesWithLocId(int locId){
     	return temp.query("select distinct rt.retID, rt.retName, rt.retIconName, rt.description, rt.isActive from ResourceType rt join Resources r "
-    			+ "on rt.retID = r.resType join LocationResource lr on r.resId = lr.resId where lr.locId = ?", 
+    			+ "on rt.retID = r.resType join LocationResource lr on r.resId = lr.resId where lr.locId = ? and r.isactive > 0", 
     			new ResourceTypeMapper(), locId);
     }
 
