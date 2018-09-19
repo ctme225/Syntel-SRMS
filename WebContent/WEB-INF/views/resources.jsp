@@ -68,7 +68,7 @@
 		background: #585f66;
 		box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.1);
 		position: fixed;
-		top: 82px;
+		top: 92px;
 		flex-direction: column !important;
 		left: -220px;
 		width: 200px;
@@ -144,6 +144,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
   img{
   	filter: invert(100%);
+
   }
   
 
@@ -293,7 +294,7 @@ height: 60px;
  	<div id="wrapper" class="animate">
             <nav id= "navigation" class="navbar header-top fixed-top navbar-expand-lg  navbar-dark ">
                 <span id="hamBurgerMenu" class="navbar-toggler-icon light leftmenutrigger" ></span>
-                <a class="navbar-brand" style = "display: inline-block;" href=../home><img src="../resources/images/book-logo.png" alt="logo"  style="filter: invert(0%); height:25%; width:25%; margin-bottom:0px; "/></a>
+               <a class="navbar-brand" style = "display: inline-block;" href="../home"><img src="../resources/images/book-logo.png" alt="logo" style="height:11%; filter: invert(0%); width:11%; margin-bottom:3px; "/></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>

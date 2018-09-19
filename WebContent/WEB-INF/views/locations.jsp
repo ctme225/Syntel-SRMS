@@ -92,7 +92,7 @@
 	            background: #585f66;
 	            box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.1);
 	            position: fixed;
-	            top: 82px;
+	            top: 84px;
 	            flex-direction: column !important;
 	            left: -220px;
 	            width: 200px;
