@@ -94,41 +94,27 @@ public class VisitorServices {
 			List<BookingModel> listofBookings = new BookingDAO().getBookingsForCurrentDate();
 
 			VisitorsModel obj = new VisitorDAO().getVisitorWithEmail((request.getParameter("visEmail")));
-			// HttpSession userSession = request.getSession(true);
-			// userSession.setAttribute("mapofBookings", listofBookings);
 
-			System.out.println(obj.getBadgeId());
-			
-			// ModelMap bookingData = new ModelMap();
 			bookingData.addAttribute("listofbookings", listofBookings);
-			System.out.println(listofBookings.size());
-			;
 			return new ModelAndView("ReturnCheckInView", "command", obj);
 
 		} catch (EmptyResultDataAccessException ex) {
 			List<BookingModel> listofBookings = new BookingDAO().getBookingsForCurrentDate();
 
-			// HttpSession userSession = request.getSession(true);
-			// userSession.setAttribute("mapofBookings", listofBookings);
-
-			// ModelMap bookingData = new ModelMap();
 			bookingData.addAttribute("listofbookings", listofBookings);
-			System.out.println(listofBookings.size());
-			;
 			return new ModelAndView("VisitorRegistrationView", "command", new VisitorsModel());
 		}
 
 	}
 
-	@RequestMapping(value = "CheckOut", method = RequestMethod.POST)
+	@RequestMapping(value = "CheckOut", method = RequestMethod.POST)  //Retrieve visitor details to prepare for checkout
 	public ModelAndView outVisitor(HttpServletRequest request, HttpServletResponse res) {
 		VisitorsModel obj = new VisitorDAO().getVisitorWithEmail((request.getParameter("visEmail")));
 		return new ModelAndView("ConfirmCheckoutView", "command", obj);
 	}
 
-	@RequestMapping(value = "saveVisitor", method = RequestMethod.POST)
+	@RequestMapping(value = "saveVisitor", method = RequestMethod.POST)  //insert  a new visitor into the table
 	public ModelAndView saveVisitor(@ModelAttribute("vis") VisitorsModel vis) {
-		System.out.println(vis.getBadgeId());
 		int ret = new VisitorDAO().insertVisitor(vis);
 		if (ret > 0)
 			return new ModelAndView("redirect:/welcomegreetingview");
@@ -136,9 +122,8 @@ public class VisitorServices {
 			return new ModelAndView("error");
 	}
 
-	@RequestMapping(value = "outVisitor", method = RequestMethod.POST)
+	@RequestMapping(value = "outVisitor", method = RequestMethod.POST)  //for checking out a visitor
 	public ModelAndView outVisitor(@ModelAttribute("obj") VisitorsModel obj) {
-		System.out.println("   " + obj.getVisEmail());
 		int ret = new VisitorDAO().outVisitor(obj);
 		if (ret > 0)
 			return new ModelAndView("redirect:/guestfarewellview");
@@ -146,7 +131,7 @@ public class VisitorServices {
 			return new ModelAndView("error");
 	}
 
-	@RequestMapping(value="CheckOutVis/{visId}")
+	@RequestMapping(value="CheckOutVis/{visId}")  //For admins to force check out a visitor
     public ModelAndView CheckOutVis(@PathVariable int visId)
     {
         int ret = new VisitorDAO().CheckOutVis(visId);
@@ -155,11 +140,4 @@ public class VisitorServices {
         else
             return new ModelAndView("error");
     }
-	/*
-	 * public static void main(String args[]) {
-	 * 
-	 * List<VisitorsModel> list = new VisitorDAO().getAllVisitors();
-	 * for(VisitorsModel v : list) { System.out.println(v.toString()); } }
-	 * 
-	 */
 }
