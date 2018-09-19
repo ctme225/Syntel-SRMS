@@ -24,8 +24,6 @@ org.springframework.web.context.support.WebApplicationContextUtils"%>
 	<link rel="stylesheet" href = "resources/js/bootstrap.js"/>
 	<link rel="stylesheet" href = "resources/js/bootstrap.min.js"/>
 	<link rel="stylesheet" href = "resources/js/jquerylib.js"/>
-	
-
 
 <title>Login</title>
 
@@ -61,9 +59,7 @@ org.springframework.web.context.support.WebApplicationContextUtils"%>
 	 </form>
 	 </div>
 	      
-	      <br>
-	       <!-- <img src="resources/images/syntrans.png" alt="logo" style="height:50%; width:50%; padding-bottom:60px; "> -->
-	    
+	      <br>	    
 	  </div>
 </body>
 </html>
