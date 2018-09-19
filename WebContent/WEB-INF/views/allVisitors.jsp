@@ -139,7 +139,7 @@
 
 </tr>
 <c:forEach var="vis" items="${allvis}" >
-	<tr ng-app="myMod">
+	<tr>
 		<td>${vis.visId}</td>
 		<td>${vis.visName}</td>
 		<td>${vis.visEmail}</td>
@@ -193,6 +193,5 @@
             });
         });
 	</script>
-	<!-- <a href="CheckOutVis/${vis.visId}">Check Out</a> -->
 </body>
 </html>

@@ -257,6 +257,4 @@ body {
 	 
 </div>
 </header>
-
-
 </html>

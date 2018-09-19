@@ -225,29 +225,8 @@ body {
 	<script src="resources/js/bootstrap.min.js"></script>
 	<script src="resources/js/jquery.dataTables.min.js"></script>
 	<script src="resources/js/dataTables.bootstrap.min.js"></script>
-
-
-
-	<!-- Bootstrap core JavaScript -->
 	<script src="resources/js/jquerylib.js"></script>
 	<script src="resources/js/bootstrap.bundle.min.js"></script>
-<%-- <script>
-<%
-try {
-	HttpSession s = request.getSession();
-	VisitorsModel model = (VisitorsModel) s.getAttribute("vmodel");
-	out.println(model.getVisName());
-	out.println(model.getVisEmail());
-	out.println(model.getBadgeId());
-	out.println(model.getVisPurpose());
-	out.println(model.getVisCompany());
 
-}
-
-catch (NullPointerException n) {
-	out.println("--------error...");
-}
-%>
-</script> --%>
 </body>
 </html>
