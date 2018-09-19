@@ -188,9 +188,7 @@ thead {
 	        }
 	    }
           @media (max-width: 600px){ .welcome-tag{ display: none} }
-	</style>
-    
-=======
+
 }
 
 tbody td, thead th {
@@ -267,7 +265,6 @@ table {
 }
 </style>
 
->>>>>>> 722d4b355cabf5a0775ae0273f1ed7dbcd03c610
 </head>
 <body>
 
