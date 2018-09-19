@@ -114,54 +114,69 @@
 #outbutton {
 	background-color: red;
 }
+
+th {
+	text-align: center;
+	background-color: lightblue;
+}
+
+tr {
+	text-align: center;
+}
+
+table {
+	margin: 0 auto;
+}
+
+#checkbutton {
+	background-color:red;
+}
 </style>
 </head>
 
 <body>
 
 
-		<a type="button" href = landing class="btn btn-primary btn-lg btn-block">Visitor Services</a>
+	<a type="button" href=landing class="btn btn-primary btn-lg btn-block">Visitor
+		Services</a>
 	<div>
-	<div>
-	
-	<table border="3" cellspacing="3" cellpadding="4" 
-	style="background-color: white;border:double;border-color: blue">
-<tr>
-	<th>ID</th>
-	<th>Name</th>
-	<th>Email</th>
-	<th>Phone</th>
-	<th>Badge ID</th>
-	<th>Purpose</th>
-	<th>Company</th>
-	<th>In Time</th>
-	<th>Out Time</th>
+		<div>
 
-</tr>
-<c:forEach var="vis" items="${allvis}" >
-	<tr>
-		<td>${vis.visId}</td>
-		<td>${vis.visName}</td>
-		<td>${vis.visEmail}</td>
-		<td>${vis.visPhone}</td>
-		<td>${vis.badgeId}</td>
-		<td>${vis.visPurpose}</td>
-		<td>${vis.visCompany}</td>
-		<td>${vis.checkIn}</td>
-		
-		<td>
-			<c:if test="${vis.checkOut == null}">
-				<a href="CheckOutVis/${vis.visId}">Check Out</a>	
-			</c:if>
-			<c:if test="${vis.checkOut != null}">
+			<table border="3" cellspacing="3" cellpadding="4"
+				style="background-color: white; border: double; border-color: blue">
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Phone</th>
+					<th>Badge ID</th>
+					<th>Purpose</th>
+					<th>Company</th>
+					<th>In Time</th>
+					<th>Out Time</th>
+
+				</tr>
+				<c:forEach var="vis" items="${allvis}">
+					<tr>
+						<td>${vis.visId}</td>
+						<td>${vis.visName}</td>
+						<td>${vis.visEmail}</td>
+						<td>${vis.visPhone}</td>
+						<td>${vis.badgeId}</td>
+						<td>${vis.visPurpose}</td>
+						<td>${vis.visCompany}</td>
+						<td>${vis.checkIn}</td>
+
+						<td><c:if test="${vis.checkOut == null}">
+								<a href="CheckOutVis/${vis.visId}" id="checkbutton" type="button" class="btn btn-danger btn-lg">Check
+									Out</a>
+							</c:if> <c:if test="${vis.checkOut != null}">
 				${vis.checkOut}	
-			</c:if>
-			
-		</td>
-	</tr>
-</c:forEach>
-</table>
-</div>
+			</c:if></td>
+					</tr>
+				</c:forEach>
+			</table>
+		</div>
 	</div>
 	<script src="resources/js/jquerylib.js"></script>
 	<script src="resources/js/fontawesome.js"></script>
@@ -169,29 +184,28 @@
 	<script src="resources/js/moment.js"></script>
 	<script src="resources/js/bootstrap.min.js"></script>
 	<script>
-	
-        $(document).ready(function() {
-            $('.dropdown-toggle').dropdown();
-            $('.leftmenutrigger').on('click', function(e) {
-                $('.side-nav').toggleClass('open');
-                    e.preventDefault();
-                });
-            $("#util").on('click',function(){
-                 document.location.href = $(this).val();
-            });
-            $("#rsvtn").on('click',function(){
-                 document.location.href = $(this).val();
-            });
-            $("#locat").on('click',function(){
-                 document.location.href = $(this).val();
-            });
-            $("#vis").on('click',function(){
-                 document.location.href = $(this).val();         
-            });
-            $("#userop").on('click',function(){
-                 document.location.href = $(this).val();         
-            });
-        });
+		$(document).ready(function() {
+			$('.dropdown-toggle').dropdown();
+			$('.leftmenutrigger').on('click', function(e) {
+				$('.side-nav').toggleClass('open');
+				e.preventDefault();
+			});
+			$("#util").on('click', function() {
+				document.location.href = $(this).val();
+			});
+			$("#rsvtn").on('click', function() {
+				document.location.href = $(this).val();
+			});
+			$("#locat").on('click', function() {
+				document.location.href = $(this).val();
+			});
+			$("#vis").on('click', function() {
+				document.location.href = $(this).val();
+			});
+			$("#userop").on('click', function() {
+				document.location.href = $(this).val();
+			});
+		});
 	</script>
 </body>
 </html>
