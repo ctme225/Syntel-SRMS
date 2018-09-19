@@ -347,7 +347,7 @@ height: 60px;
 
       <div class="row">
         <div class="col-sm">
-            <button type="button" data-toggle="modal" data-target="#NewResModal" class="btn btn-primary btn-lg">Add New Resource</button>
+            <button type="button" data-toggle="modal" data-target="#NewResModal" style="float: left;" class="btn btn-primary btn-lg">Add New Resource</button>
         </div>
         <div class="col-sm"></div>
         <div class="col-sm"></div>
@@ -355,7 +355,7 @@ height: 60px;
         <div class="col-sm">
             
             <div class="dropdown">
-                <button class="btn btn-primary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="btn btn-primary btn-lg dropdown-toggle" style="float: left; left: 32px; position: absolute;"type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Location
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
