@@ -117,7 +117,7 @@
 
 th {
 	text-align: center;
-	background-color: blue;
+	background-color: black;
 	color: white;
 }
 
@@ -143,7 +143,7 @@ tr:nth-child(even) {
 
 
 	<a type="button" href=landing
-		style="background-color: black; color: white;"
+		style="background-color: lightblue; color: black;"
 		class="btn btn-lg btn-block">Demo Visitor Services</a>
 	<div>
 		<div>
