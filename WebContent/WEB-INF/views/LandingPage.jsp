@@ -85,13 +85,13 @@
       width: 100%;
       padding-top: 150px;
       padding-bottom: 100px;
-      color: white;
+      background-color: lightblue;
       /*background: linear-gradient(to bottom, rgba(22, 22, 22, 0.1) 0%, rgba(22, 22, 22, 0.5) 75%, #161616 100%), url("../img/bg-masthead.jpg");
       background: url("../img/bg-pattern.png"), #00ff37;
       background: url("../img/bg-pattern.png"), -webkit-linear-gradient(to left, #932ac7, #dc2430);
       background: url("../img/bg-pattern.png"), linear-gradient(to left, #73f708, #dc2430);I*/
       /*background: #000000;  /* fallback for old browsers */
-      background-color"white";
+
       }
 
     @-webkit-keyframes Gradient {
@@ -165,7 +165,6 @@
       } 
     }
   </style>
-  <body >
 
     <header class="masthead">
       <div class="container h-100">

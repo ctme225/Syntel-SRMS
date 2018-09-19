@@ -87,7 +87,7 @@
       width: 100%;
       padding-top: 150px;
       padding-bottom: 100px;
-      color: white;
+    background-color: lightblue;
      
       }
 
@@ -169,7 +169,7 @@
         <div class="row h-100">
           <div class="col-lg-7 my-auto">
             <div class="header-content mx-auto">
-                <h1 class = "mb-5">Thanks for checking out! Have a good one!</h1>
+                <h1 class = "mb-5">Thanks for checking out! See you soon!</h1>
                 <img src="resources/images/vm_logologo.png" alt="logo" style="height:65%; width:65%; padding-bottom:0px; "/>
                 <br>
             </div>

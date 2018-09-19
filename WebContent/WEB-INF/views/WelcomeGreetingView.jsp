@@ -87,7 +87,7 @@
       width: 100%;
       padding-top: 150px;
       padding-bottom: 100px;
-      color: white;
+      background-color: lightblue;
    
       }
 
