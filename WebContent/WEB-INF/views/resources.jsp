@@ -77,6 +77,9 @@
 		overflow-x: hidden;
 		padding-bottom: 40px;
 	}
+	.btn-warning{
+		color: white;
+	}
 }
 
 .modal-form{
@@ -267,11 +270,7 @@ a:link{
 li{
 height: 60px;
 }
-  body{
-  }
-  .jackInTheBox{
-  	background-color: #6B6E70;
-  }
+
   
   
 @media (max-width: 992px) {
@@ -370,15 +369,58 @@ height: 60px;
 
       </div>
       <br>
+      <br>
+      <br>
       
       <div class="container room-store">
         <div class="row room-store">
         <c:forEach var="resourceType" items="${resourceTypes}">
           <div class="col-xs">
+
+          <c:choose>
+          <c:when test="${resourceType.ID == 1}">
+              <button type="button" class="btn btn-class btn-success btn-lg btn-block animated jackInTheBox" data-toggle="modal" data-target="#Modal${resourceType.name}">
+              	<img src="../resources/images/${resourceType.iconName}" style="width: 5rem; height: 5rem;"/>
+              	${resourceType.name} 
+              </button>
+          </c:when>
+          <c:when test="${resourceType.ID == 2}">
+              <button type="button" class="btn btn-class btn-danger btn-lg btn-block animated jackInTheBox" data-toggle="modal" data-target="#Modal${resourceType.name}">
+              	<img src="../resources/images/${resourceType.iconName}" style="width: 5rem; height: 5rem;"/>
+              	${resourceType.name} 
+              </button>
+          </c:when>
+          <c:when test="${resourceType.ID == 3}">
+              <button type="button" class="btn btn-class btn-primary btn-lg btn-block animated jackInTheBox" data-toggle="modal" data-target="#Modal${resourceType.name}">
+              	<img src="../resources/images/${resourceType.iconName}" style="width: 5rem; height: 5rem;"/>
+              	${resourceType.name} 
+              </button>
+          </c:when>
+          <c:when test="${resourceType.ID == 5}">
+              <button type="button" class="btn btn-class btn-info btn-lg btn-block animated jackInTheBox" data-toggle="modal" data-target="#Modal${resourceType.name}">
+              	<img src="../resources/images/${resourceType.iconName}" style="width: 5rem; height: 5rem;"/>
+              	${resourceType.name} 
+              </button>
+          </c:when>
+          <c:when test="${resourceType.ID == 4}">
+              <button type="button" class="btn btn-class btn-warning btn-lg btn-block animated jackInTheBox" data-toggle="modal" data-target="#Modal${resourceType.name}">
+              	<img src="../resources/images/${resourceType.iconName}" style="width: 5rem; height: 5rem;"/>
+              	${resourceType.name} 
+              </button>
+          </c:when>
+          <c:when test="${resourceType.ID == 6}">
               <button type="button" class="btn btn-class btn-dark btn-lg btn-block animated jackInTheBox" data-toggle="modal" data-target="#Modal${resourceType.name}">
               	<img src="../resources/images/${resourceType.iconName}" style="width: 5rem; height: 5rem;"/>
               	${resourceType.name} 
               </button>
+          </c:when>
+          <c:when test="${resourceType.ID == 7}">
+              <button type="button" class="btn btn-class btn-secondary btn-lg btn-block animated jackInTheBox" data-toggle="modal" data-target="#Modal${resourceType.name}">
+              	<img src="../resources/images/${resourceType.iconName}" style="width: 4rem; height: 4rem;"/>
+              	${resourceType.name} 
+              </button>
+          </c:when>
+          </c:choose>
           </div>
           
           
