@@ -117,7 +117,8 @@
 
 th {
 	text-align: center;
-	background-color: lightblue;
+	background-color: blue;
+	color: white;
 }
 
 tr {
@@ -128,6 +129,8 @@ table {
 	margin: 0 auto;
 }
 
+tr:nth-child(even) {background-color: #f2f2f2;}
+
 #checkbutton {
 	background-color:red;
 }
@@ -137,13 +140,13 @@ table {
 <body>
 
 
-	<a type="button" href=landing class="btn btn-primary btn-lg btn-block">Visitor
+	<a type="button" href=landing style="background-color: gray; color:white;" class ="btn btn-lg btn-block">Visitor
 		Services</a>
 	<div>
 		<div>
 
 			<table border="3" cellspacing="3" cellpadding="4"
-				style="background-color: white; border: double; border-color: blue">
+				style="background-color: white; border: solid; border-color: black">
 				<tr>
 					<th>ID</th>
 					<th>Name</th>
