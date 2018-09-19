@@ -124,35 +124,35 @@ public class BookingService {
 			switch(res1.getResType()) {
 	            case 1:
 	                roomName = "Scrum";
-	                color = "red";
+	                color = "#001f3f";
 	                break;
 	            case 2:
 	                roomName = "Board";
-	                color = "blue";
+	                color = "#FF4136";
 	                break;
 	            case 3:
 	                roomName = "Class";
-	                color = "pink";
+	                color = "#85144b";
 	                break;
 	            case 4:
 	                roomName = "Rec";
-	                color = "green";
+	                color = "#771C1C";
 	                break;
 	            case 5:
 	                roomName = "Break";
-	                color = "grey";
+	                color = "#B10DC9";
 	                break;
 	            case 6:
 	                roomName = "Lounge";
-	                color = "yellow";
+	                color = "#FF851B";
 	                break;
 	            case 7:
 	                roomName = "Conference";
-	                color = "orange";
+	                color = "#3D9970";
 	                break;
 	            default:
 	                roomName = "Meeting";
-	                color = "rgb(255, 80, 80)";
+	                color = "#2ECC40";
 	        }
 				CalendarEventServices c = new CalendarEventServices(roomName, out.getStartTime(), out.getEndTime(), color, out.getDescription(), out.getID(),res1.getResName());
 				ces.add(c);
