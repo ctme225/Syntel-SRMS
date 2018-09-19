@@ -66,7 +66,7 @@
 		background: #585f66;
 		box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.1);
 		position: fixed;
-		top: 82px;
+		top: 84px;
 		flex-direction: column !important;
 		left: -220px;
 		width: 200px;
@@ -117,7 +117,7 @@
 
 th {
 	text-align: center;
-	background-color: blue;
+	background-color: black;
 	color: white;
 }
 
@@ -129,10 +129,12 @@ table {
 	margin: 0 auto;
 }
 
-tr:nth-child(even) {background-color: #f2f2f2;}
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
 
 #checkbutton {
-	background-color:red;
+	background-color: red;
 }
 </style>
 </head>
@@ -140,8 +142,9 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 <body>
 
 
-	<a type="button" href=landing style="background-color: gray; color:white;" class ="btn btn-lg btn-block">Visitor
-		Services</a>
+	<a type="button" href=landing
+		style="background-color: lightblue; color: black;"
+		class="btn btn-lg btn-block">Demo Visitor Services</a>
 	<div>
 		<div>
 
@@ -171,8 +174,9 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 						<td>${vis.checkIn}</td>
 
 						<td><c:if test="${vis.checkOut == null}">
-								<a href="CheckOutVis/${vis.visId}" id="checkbutton" type="button" class="btn btn-danger btn-lg">Check
-									Out</a>
+								<a href="CheckOutVis/${vis.visId}" id="checkbutton"
+									type="button"
+									class="btn btn-danger btn-block btn-lg fa fa-sign-out-alt"> </a>
 							</c:if> <c:if test="${vis.checkOut != null}">
 				${vis.checkOut}	
 			</c:if></td>

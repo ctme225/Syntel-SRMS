@@ -87,18 +87,8 @@
       width: 100%;
       padding-top: 150px;
       padding-bottom: 100px;
-      color: white;
-      /*background: linear-gradient(to bottom, rgba(22, 22, 22, 0.1) 0%, rgba(22, 22, 22, 0.5) 75%, #161616 100%), url("../img/bg-masthead.jpg");
-      background: url("../img/bg-pattern.png"), #00ff37;
-      background: url("../img/bg-pattern.png"), -webkit-linear-gradient(to left, #932ac7, #dc2430);
-      background: url("../img/bg-pattern.png"), linear-gradient(to left, #73f708, #dc2430);I*/
-      /*background: #000000;  /* fallback for old browsers */
-      background: -webkit-linear-gradient(-45deg, #434343, #000000);
-      background: linear-gradient(-45deg, #434343, #000000); 
-      background-size: 400% 400%;
-      -webkit-animation: Gradient 15s ease infinite;
-      -moz-animation: Gradient 15s ease infinite;
-      animation: Gradient 15s ease infinite;
+    background-color: lightblue;
+     
       }
 
     @-webkit-keyframes Gradient {
@@ -179,8 +169,8 @@
         <div class="row h-100">
           <div class="col-lg-7 my-auto">
             <div class="header-content mx-auto">
-                <h1 class = "mb-5">Thanks for checking out! Have a good one!</h1>
-                <img src="resources/images/book-logo.png" alt="logo" style="height:65%; width:65%; padding-bottom:0px; "/>
+                <h1 class = "mb-5">Thanks for checking out! See you soon!</h1>
+                <img src="resources/images/vm_logologo.png" alt="logo" style="height:65%; width:65%; padding-bottom:0px; "/>
                 <br>
             </div>
           </div>
