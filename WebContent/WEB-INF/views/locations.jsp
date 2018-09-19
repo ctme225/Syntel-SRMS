@@ -79,7 +79,7 @@ thead {
 }
 
 tbody td, thead th {
-	width: 14.20%;
+	width: 14.28%;
 	float: left;
 }
 
