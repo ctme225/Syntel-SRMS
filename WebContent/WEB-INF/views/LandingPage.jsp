@@ -85,6 +85,14 @@
       width: 100%;
       padding-top: 150px;
       padding-bottom: 100px;
+<<<<<<< HEAD
+      color: white;
+      background: linear-gradient(to bottom, rgba(22, 22, 22, 0.1) 0%, rgba(22, 22, 22, 0.5) 75%, #161616 100%), url("../img/bg-masthead.jpg");
+      background: url("../img/bg-pattern.png"), -webkit-linear-gradient(to left, #004837, #E85200);
+      background: url("../img/bg-pattern.png"), linear-gradient(to left, #004837, #E85200);I*/
+      background: #000000;  /* fallback for old browsers */
+      background-color"white";
+=======
       background-color: lightblue;
       /*background: linear-gradient(to bottom, rgba(22, 22, 22, 0.1) 0%, rgba(22, 22, 22, 0.5) 75%, #161616 100%), url("../img/bg-masthead.jpg");
       background: url("../img/bg-pattern.png"), #00ff37;
@@ -92,6 +100,7 @@
       background: url("../img/bg-pattern.png"), linear-gradient(to left, #73f708, #dc2430);I*/
       /*background: #000000;  /* fallback for old browsers */
 
+>>>>>>> 722d4b355cabf5a0775ae0273f1ed7dbcd03c610
       }
 
     @-webkit-keyframes Gradient {

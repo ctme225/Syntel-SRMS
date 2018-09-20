@@ -68,7 +68,7 @@
 		background: #585f66;
 		box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.1);
 		position: fixed;
-		top: 82px;
+		top: 92px;
 		flex-direction: column !important;
 		left: -220px;
 		width: 200px;
@@ -144,6 +144,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
   img{
   	filter: invert(100%);
+
   }
   
 
@@ -293,7 +294,7 @@ height: 60px;
  	<div id="wrapper" class="animate">
             <nav id= "navigation" class="navbar header-top fixed-top navbar-expand-lg  navbar-dark ">
                 <span id="hamBurgerMenu" class="navbar-toggler-icon light leftmenutrigger" ></span>
-                <a class="navbar-brand" style = "display: inline-block;" href=../home><img src="../resources/images/book-logo.png" alt="logo"  style="filter: invert(0%); height:25%; width:25%; margin-bottom:0px; "/></a>
+               <a class="navbar-brand" style = "display: inline-block;" href="../home"><img src="../resources/images/book-logo.png" alt="logo" style="height:11%; filter: invert(0%); width:11%; margin-bottom:3px; "/></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -379,52 +380,66 @@ height: 60px;
 
           <c:choose>
           <c:when test="${resourceType.ID == 1}">
-              <button type="button" class="btn btn-class btn-success btn-lg btn-block animated jackInTheBox" data-toggle="modal" data-target="#Modal${resourceType.name}">
+              <button type="button" class="btn btn-class btn-success btn-lg btn-block animated jackInTheBox" data-toggle="modal" data-target="#Modal${resourceType.ID}">
               	<img src="../resources/images/${resourceType.iconName}" style="width: 5rem; height: 5rem;"/>
+              	<div class="container" style="text-align: center; position: relative">
               	${resourceType.name} 
+              	</div>
               </button>
           </c:when>
           <c:when test="${resourceType.ID == 2}">
-              <button type="button" class="btn btn-class btn-danger btn-lg btn-block animated jackInTheBox" data-toggle="modal" data-target="#Modal${resourceType.name}">
+              <button type="button" class="btn btn-class btn-danger btn-lg btn-block animated jackInTheBox" data-toggle="modal" data-target="#Modal${resourceType.ID}">
               	<img src="../resources/images/${resourceType.iconName}" style="width: 5rem; height: 5rem;"/>
+              	<div class="container" style="text-align: center; position: relative">
               	${resourceType.name} 
+              	</div>
               </button>
           </c:when>
           <c:when test="${resourceType.ID == 3}">
-              <button type="button" class="btn btn-class btn-primary btn-lg btn-block animated jackInTheBox" data-toggle="modal" data-target="#Modal${resourceType.name}">
+              <button type="button" class="btn btn-class btn-primary btn-lg btn-block animated jackInTheBox" data-toggle="modal" data-target="#Modal${resourceType.ID}">
               	<img src="../resources/images/${resourceType.iconName}" style="width: 5rem; height: 5rem;"/>
+              	<div class="container" style="text-align: center; position: relative">
               	${resourceType.name} 
+              	</div>
               </button>
           </c:when>
           <c:when test="${resourceType.ID == 5}">
-              <button type="button" class="btn btn-class btn-info btn-lg btn-block animated jackInTheBox" data-toggle="modal" data-target="#Modal${resourceType.name}">
+              <button type="button" class="btn btn-class btn-info btn-lg btn-block animated jackInTheBox" data-toggle="modal" data-target="#Modal${resourceType.ID}">
               	<img src="../resources/images/${resourceType.iconName}" style="width: 5rem; height: 5rem;"/>
+              	<div class="container" style="text-align: center; position: relative">
               	${resourceType.name} 
+              	</div>
               </button>
           </c:when>
           <c:when test="${resourceType.ID == 4}">
-              <button type="button" class="btn btn-class btn-warning btn-lg btn-block animated jackInTheBox" data-toggle="modal" data-target="#Modal${resourceType.name}">
+              <button type="button" class="btn btn-class btn-warning btn-lg btn-block animated jackInTheBox" data-toggle="modal" data-target="#Modal${resourceType.ID}">
               	<img src="../resources/images/${resourceType.iconName}" style="width: 5rem; height: 5rem;"/>
+              	<div class="container" style="text-align: center; position: absolute; left: 0; bottom: 0px;">
               	${resourceType.name} 
+              	</div>
               </button>
           </c:when>
           <c:when test="${resourceType.ID == 6}">
-              <button type="button" class="btn btn-class btn-dark btn-lg btn-block animated jackInTheBox" data-toggle="modal" data-target="#Modal${resourceType.name}">
+              <button type="button" class="btn btn-class btn-dark btn-lg btn-block animated jackInTheBox" data-toggle="modal" data-target="#Modal${resourceType.ID}">
               	<img src="../resources/images/${resourceType.iconName}" style="width: 5rem; height: 5rem;"/>
+              	<div class="container" style="text-align: center; position: relative">
               	${resourceType.name} 
+              	</div>
               </button>
           </c:when>
           <c:when test="${resourceType.ID == 7}">
-              <button type="button" class="btn btn-class btn-secondary btn-lg btn-block animated jackInTheBox" data-toggle="modal" data-target="#Modal${resourceType.name}">
+              <button type="button" class="btn btn-class btn-secondary btn-lg btn-block animated jackInTheBox" data-toggle="modal" data-target="#Modal${resourceType.ID}">
               	<img src="../resources/images/${resourceType.iconName}" style="width: 4rem; height: 4rem;"/>
+              	<div class="container" style="text-align: center; position: relative">
               	${resourceType.name} 
+              	</div>
               </button>
           </c:when>
           </c:choose>
           </div>
           
           
-           <div class="modal fade" id="Modal${resourceType.name}" role="dialog">
+           <div class="modal fade" id="Modal${resourceType.ID}" role="dialog">
                     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 			    		<div class="modal-content">
 			      		<div class="modal-header">

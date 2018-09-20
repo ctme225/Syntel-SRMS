@@ -76,6 +76,119 @@ tbody {
 thead {
 	/* fallback */
 	
+<<<<<<< HEAD
+	<jsp:include page="navbar.jsp" />
+
+	<style>
+	    body{
+	        background: #F5F5F5;
+	        overflow-y: hidden;
+	    }
+	    #SRMS {
+	        font-size: 30px;
+	    }
+	    .navbar-expand-lg .navbar-nav.side-nav {
+	        flex-direction: column;
+	    }
+	    .navbar {
+	        background: #383838;
+	    }
+	    .header-top {
+	        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+	    }
+	    .leftmenutrigger {
+	        display: none;
+	    }
+	    #wrapper {
+	        padding: 90px 15px 0px 15px;
+	    }
+	    .btn-dark{
+	        margin: 3px;
+	        height: 60px;
+	    }
+	    table {
+        width: 100%;
+    }
+
+		thead, tbody, tr, td, th { display: block; }
+		
+		tr:after {
+		    content: ' ';
+		    display: block;
+		    visibility: hidden;
+		    clear: both;
+		}
+		
+		thead th {
+		    height: 50px;
+		    /*text-align: left;*/
+		}
+		
+		tbody {
+		    height: 430px;
+		    overflow-y: auto;
+		}
+		
+		thead {
+		    /* fallback */
+		}
+		
+		
+		tbody td, thead th {
+		    width: 14.20%;
+		    float: left;
+		}
+	    @media (min-width: 992px) {
+	        .leftmenutrigger {
+	            display: block;
+	            display: block;
+	            margin: 7px 20px 4px 0;
+	            cursor: pointer;
+	        }
+	        #show-op{
+	            display: none;
+	        }
+	        #wrapper {
+	            padding:90px 15px 0px 15px;
+	        }
+	        .navbar-nav.side-nav.open {
+	            left: 0;
+	        }
+	        .navbar-nav.side-nav {
+	            background: #585f66;
+	            box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.1);
+	            position: fixed;
+	            top: 84px;
+	            flex-direction: column !important;
+	            left: -220px;
+	            width: 200px;
+	            overflow-y: auto;
+	            bottom: 0;
+	            overflow-x: hidden;
+	            padding-bottom: 30px;
+	        }
+	    }
+	    .animate {
+	        -webkit-transition: all 0.3s ease-in-out;
+	        -moz-transition: all 0.3s ease-in-out;
+	        -o-transition: all 0.3s ease-in-out;
+	        -ms-transition: all 0.3s ease-in-out;
+	        transition: all 0.3s ease-in-out;
+	    }
+	    @media (max-width: 992px) {
+	        #hamBurgerMenu, #dropdown{
+	            display: none;
+	        }   
+	        .removeCol{
+	            display: none;
+	        }
+	        .btn{
+	            margin: 5px;
+	            padding: 10px;
+	        }
+	    }
+          @media (max-width: 600px){ .welcome-tag{ display: none} }
+
 }
 
 tbody td, thead th {
