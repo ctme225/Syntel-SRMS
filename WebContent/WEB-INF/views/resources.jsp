@@ -729,7 +729,6 @@ height: 60px;
                                                 <label class="input-group-text" for="addfeaselect">Feature</label>
                                               </div>
                                               <select required class="custom-select" name="addfeaselect" id="addfeaselect">
-						                      <option disabled="disabled" selected>Choose Feature</option>
 						                      <c:forEach var="featureType" items="${allFea}">
 						                        <option value="${featureType.feaId}">${featureType.feaType}</option>
 						                      </c:forEach>
@@ -866,7 +865,6 @@ height: 60px;
 	                      <label class="input-group-text" for="restypeselect">Resource</label>
 	                    </div>
 	                    <select required class="custom-select" name="restypeselect" id="restypeselect">
-	                      <option disabled="disabled" selected>Choose Resource Type</option>
 	                      <c:forEach var="resourceType" items="${allResTypes}">
 	                        <option value="${resourceType.ID}">${resourceType.name}</option>
 	                      </c:forEach>
@@ -900,7 +898,6 @@ height: 60px;
                                                 <label class="input-group-text" for="feaselect">Feature</label>
                                               </div>
                                               <select required class="custom-select" name="feaselect" id="feaselect">
-						                      <option disabled="disabled" selected>Choose Feature</option>
 						                      <c:forEach var="featureType" items="${allFea}">
 						                        <option value="${featureType.feaId}">${featureType.feaType}</option>
 						                      </c:forEach>
