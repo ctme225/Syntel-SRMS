@@ -20,7 +20,7 @@ org.springframework.web.context.support.WebApplicationContextUtils"%>
         <div id="wrapper" class="animate">
             <nav id= "navigation" class="navbar header-top fixed-top navbar-expand-lg  navbar-dark ">
                 <span id="hamBurgerMenu" class="navbar-toggler-icon light leftmenutrigger" ></span>
-                <a class="navbar-brand" style = "display: inline-block;" href="home"><img src="resources/images/book-logo.png" alt="logo" style="height:25%; width:25%; margin-bottom:0px; "/></a>
+                <a class="navbar-brand" style = "display: inline-block;" href="home"><img src="resources/images/book-logo.png" alt="logo" style="height:11%; width:11%; margin-bottom:3px; "/></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>

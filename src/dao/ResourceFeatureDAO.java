@@ -45,7 +45,7 @@ public class ResourceFeatureDAO {
     
     // Updates isActive column entry to 0 to the specified ResourceFeature from ResourceFeature table
     public int deleteResourceFeature(ResourceFeatureModel rf) {
-    	return temp.update("update ResourceFeature set isActive = 0 where resFeaId = ?", rf.getResFeaId());
+    	return temp.update("delete from ResourceFeature where resFeaId = ?", rf.getResFeaId());
     }
 	
     // Updates specified ResourceFeature from ResourceFeature table

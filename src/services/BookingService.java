@@ -36,16 +36,24 @@ public class BookingService {
         LocationDAO ldao = new LocationDAO();
         int locid = (Integer)req.getSession().getAttribute("userLocViewId");
         if(locid == 0) locid = 1;
+        String resName = (req.getSession().getAttribute("userLocViewId")!=null ? ((String)req.getSession().getAttribute("userResName")) : "Scrum");
         System.out.println(locid);
         List<ChartData> list = dao.getNumberBookingPerDay(locid);
+        if(req.getSession().getAttribute("userTimeScale")!=null) {
+        	list = listChoice((Integer)req.getSession().getAttribute("userTimeScale"),locid,resName);        	
+        }
+        else
+        	list = listChoice(1,locid,resName);
         //list.sort(Comparator.comparing(ChartData::getNumDays).reversed());
         for(ChartData i : list)
         {
             System.out.println(i.getTitle()+" "+i.getNumDays());
 
         }
+        
         if(!modelList.containsAttribute("pieData"))
             modelList.addAttribute("pieData",new ArrayList<ChartData>());
+        
         modelList.addAttribute("chartData",list);
         List<LocationModel> locations = ldao.getAllLocations();
         modelList.addAttribute("locations",locations);
@@ -61,27 +69,74 @@ public class BookingService {
             req.getSession().setAttribute("userTimeScale",timeframe);
         return "redirect:/util";
     }
-
+    private List<ChartData> listChoice(int choice,int location,String rt) {
+        BookingDAO dao = new BookingDAO();
+        switch(choice)
+        {
+            case 1:
+                return dao.getNumberBookingPerDay(location);
+            case 2:
+                return dao.getNumberBookingPerWeek(location);
+            case 3:
+                return dao.getNumberBookingPerMonth(location);
+            case 4:
+                return dao.getNumberBookingPerQuarter(location);
+            case 5:
+                return dao.getNumberBookingPerYear(location);
+            default:
+                return dao.getNumberBookingPerDay(location);
+        }
+    }
+    
+    private List<ChartData> listChoice2(int choice,int location,String rt) {
+        BookingDAO dao = new BookingDAO();
+        switch(choice)
+        {
+            case 1:
+                return dao.getNumberBookingByResourceType(rt,location);
+            case 2:
+                return dao.getNumberBookingByResourceType2(rt,location);
+            case 3:
+                return dao.getNumberBookingByResourceType3(rt,location);
+            case 4:
+                return dao.getNumberBookingByResourceType4(rt,location);
+            case 5:
+                return dao.getNumberBookingByResourceType5(rt,location);
+            default:
+                return dao.getNumberBookingByResourceType(rt,location);
+        }
+    }
     @RequestMapping(value="Utilization/{resource}")
     public ModelAndView utilization2(ModelMap modelList, @PathVariable("resource") String resName, RedirectAttributes redir,HttpServletRequest req,HttpServletResponse res)
     {
         // Grab locations
         // Grab Rooms
-
+    	req.getSession().setAttribute("userResName", resName);
         modelList.addAttribute("location",new LocationModel());
-        BookingDAO dao = new BookingDAO();
         int locid = (Integer)req.getSession().getAttribute("userLocViewId");
-        List<ChartData> list = dao.getNumberBookingPerDay(locid);
-        List<ChartData> list2 = dao.getNumberBookingByResourceType(resName);
-        //list.sort(Comparator.comparing(ChartData::getNumDays).reversed());
+        List<ChartData> list;
+        if(req.getSession().getAttribute("userTimeScale")!=null) {
+        	list = listChoice((Integer)req.getSession().getAttribute("userTimeScale"),locid,resName);        	
+        }
+        else
+        	list = listChoice(1,locid,resName);
+       
+        List<ChartData> list2;
+        if(req.getSession().getAttribute("userTimeScale")!=null) {
+        	list2 = listChoice2((Integer)req.getSession().getAttribute("userTimeScale"),locid,resName);        	
+        }
+        else {
+        	list2 = listChoice2(1,locid,resName);
+        }
+        
         for(ChartData i : list)
         {
-            System.out.println(i.getTitle()+" "+i.getNumDays());
+            System.out.println("Chart "+i.getTitle()+" "+i.getNumDays());
 
         }
         for(ChartData i : list2)
         {
-            System.out.println(i.getTitle()+" "+i.getNumDays());
+            System.out.println("Pie "+i.getTitle()+" "+i.getNumDays());
 
         }
         modelList.addAttribute("pieData",list2);
@@ -121,25 +176,26 @@ public class BookingService {
 			String roomName = "Event";
 			String color = "purple";
 			//if(!res1.getResType().equalsIgnoreCase("none")) {
+			System.out.println(res1.getResType());
 			switch(res1.getResType()) {
 	            case 1:
 	                roomName = "Scrum";
 	                color = "#001f3f";
 	                break;
 	            case 2:
-	                roomName = "Board";
+	                roomName = "Board Room";
 	                color = "#FF4136";
 	                break;
 	            case 3:
-	                roomName = "Class";
-	                color = "#85144b";
+	                roomName = "Training Room";
+	                color = "violet";
 	                break;
 	            case 4:
-	                roomName = "Rec";
+	                roomName = "Recreational Room";
 	                color = "#771C1C";
 	                break;
 	            case 5:
-	                roomName = "Break";
+	                roomName = "Break Room";
 	                color = "#B10DC9";
 	                break;
 	            case 6:
@@ -152,7 +208,7 @@ public class BookingService {
 	                break;
 	            default:
 	                roomName = "Meeting";
-	                color = "#2ECC40";
+	                color = "rgb(255, 80, 80)";
 	        }
 				CalendarEventServices c = new CalendarEventServices(roomName, out.getStartTime(), out.getEndTime(), color, out.getDescription(), out.getID(),res1.getResName());
 				ces.add(c);
@@ -195,8 +251,6 @@ public class BookingService {
 			List<LocationResourceModel> locationresourceidlist = new LocationDAO().getResId(location.getLocId());
 			List<BookingModel> bkg = new BookingDAO().getAllBookings();
 			List<BookingModel> newBookings = new ArrayList<>();
-			
-			
 			List<ResourceTypeModel> rtm = new ResourceTypeDAO().getResourceTypesWithLocId(location.getLocId());
 			model.addAttribute("Rtypes",rtm);
 			ResourceTypeModel resTypeForUSer = new ResourceTypeDAO().getResourceType((Integer)request.getSession().getAttribute("resTypeID"));
@@ -216,21 +270,10 @@ public class BookingService {
             Map<Integer,List<FeatureViewModel>> features = new FeatureDAO().getFeatureMap(listRes);
             List<ResourceViewModel> rescources = new ArrayList<>();
             for (ResourceModel i:listRes) {
-                if(i.getAcceptedRole() == 1){
-                	if(request.getSession().getAttribute("userType").equals("Admin"))
-                	{
-                		ResourceViewModel rvm = new ResourceViewModel();
-    	                rvm.setResource(i);
-    	                rvm.setFeatures(features.get(i.getResId()));
-    	                rescources.add(rvm);
-    	                System.out.println("Super");
-                	}
-                }else {
-                	ResourceViewModel rvm = new ResourceViewModel();
-	                rvm.setResource(i);
-	                rvm.setFeatures(features.get(i.getResId()));
-	                rescources.add(rvm);
-                }
+                ResourceViewModel rvm = new ResourceViewModel();
+                rvm.setResource(i);
+                rvm.setFeatures(features.get(i.getResId()));
+                rescources.add(rvm);
             }
             model.addAttribute("resources",rescources);			
             model.addAttribute("ResT",resTypeForUSer.getIconName());
@@ -293,7 +336,9 @@ public class BookingService {
 	
 	@RequestMapping(value="/saveReservation", method=RequestMethod.POST)
 	public ModelAndView getAllBookings(HttpServletRequest req, HttpServletResponse res,ModelMap models) {
-		int resid = Integer.parseInt(req.getParameter("resourceid"));
+		System.out.println(req.getParameter("resourceID"));
+		int resid = Integer.parseInt(req.getParameter("resourceID"));
+		
 		int loc = Integer.parseInt(req.getParameter("location"));
 		System.out.println(resid + " " + loc);
 		BookingModel bm = new BookingModel();

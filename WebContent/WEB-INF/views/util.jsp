@@ -69,7 +69,7 @@
                     background: #585f66;
                     box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.1);
                     position: fixed;
-                    top: 84px;
+                    top: 82px;
                     flex-direction: column !important;
                     left: -220px;
                     width: 200px;
@@ -111,7 +111,7 @@
 
 <div class="container d-flex justify-content-between mt-5 pb-5 w-75">
     <div class="dropdown pr-2">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="Rangedropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="Rangedropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Time Frame
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -124,7 +124,7 @@
 
     </div>
     <div class="dropdown ">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="Locationdropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="Locationdropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Location
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -148,7 +148,6 @@
             <canvas id="donutChart" width="400" height="300"></canvas>
         </div>
     </div><br>
-    <div clss="pt-3"><button class="btn btn-primary">PDF</button></div>
 </div>
 <script src="<core:url value="/resources/js/Chart.bundle.min.js"/>"></script>
 <script src="<core:url value="/resources/js/jquery-3.3.1.min.js"/>"></script>
@@ -161,10 +160,27 @@
         var dummy = [<core:forEach items="${chartData}" var="dat" varStatus="i">
             '${dat.numDays}' <core:if test="${not i.last}">,</core:if>
             </core:forEach>];
-        var dummy2 = [<core:forEach items="${chartData}" var="dat" varStatus="i">
-            '${dat.title}' <core:if test="${not i.last}">,</core:if>
-            </core:forEach>];
+        var dummy2 = [<core:forEach items="${chartData}" var="dat" varStatus="i">'${dat.title}'<core:if test="${not i.last}">,</core:if></core:forEach>];
         var ctx = $('#myChart');
+        var corls = [
+        	{name:"Scrum",color:"#28a745"},
+        	{name:"Training Room",color:"#007bff"},
+        	{name:"Recreational Room",color:"#ffc107"},
+        	{name:"Board Room",color:"#dc3545"},
+        	{name:"Break Room",color:"#17a2b8"},
+        	{name:"Lounge",color:"#343a40"},
+        	{name:"Conference",color:"#6c757d"}
+        
+        ];
+        var bgc = [];
+        for(i=0; i<dummy2.length; i++){
+        	for(j=0;j<corls.length;j++){
+        		if(dummy2[i].toUpperCase() === corls[j].name.toUpperCase()){
+        			bgc.push(corls[j].color);
+        			break;
+        		}
+        	}
+        }
         var myChart = new Chart(ctx, {
             type: 'horizontalBar',
 
@@ -172,24 +188,9 @@
                 labels: dummy2,
                 datasets: [
                     {
-                        label: '# of Votes',
+                    	label: 'Days',
                         data: dummy,
-                        backgroundColor: [
-                            '#cc2462',
-                            '#bf1616',
-                            '#ecf24b',
-                            '#0faf22',
-                            '#1c87d8',
-                            '#e26c90'
-                        ],
-                        borderColor: [
-                            '#cc2462',
-                            '#bf1616',
-                            '#ecf24b',
-                            '#0faf22',
-                            '#1c87d8',
-                            '#e26c90'
-                        ],
+                        backgroundColor: bgc,
                         borderWidth: 1
                     }
                 ]
@@ -248,7 +249,6 @@
                         <core:if test="${pieData.size() eq 0 }">
                         'rgba(0, 0, 0, 0.1)',</core:if>
                         '#5d8aa8',
-                        '#f0f8ff',
                         '#e32636',
                         '#efdecd',
                         '#e52b50',
@@ -256,30 +256,6 @@
                         '#ff033e',
                         '#9966cc',
                         '#a4c639',
-                        '#f2f3f4',
-                        '#cd9575',
-                        '#915c83',
-                        '#faebd7',
-                        '#008000',
-                        '#8db600',
-                        '#fbceb1',
-                        '#00ffff',
-                        '#7fffd4',
-                        '#4b5320',
-                        '#e9d66b',
-                        '#b2beb5'
-                    ],
-                    borderColor: [
-                        '#5d8aa8',
-                        '#f0f8ff',
-                        '#e32636',
-                        '#efdecd',
-                        '#e52b50',
-                        '#ffbf00',
-                        '#ff033e',
-                        '#9966cc',
-                        '#a4c639',
-                        '#f2f3f4',
                         '#cd9575',
                         '#915c83',
                         '#faebd7',

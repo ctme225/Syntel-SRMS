@@ -163,12 +163,12 @@
 	                        	</div>
 	                    	</div>
 	                    	<c:forEach items="${resources}" var="i">
-	                            <div data-room='{"name":"${i.resource.resName}","img":"proj.png","num":${i.resource.roomNumber},"feats":[<c:forEach var="j" items="${i.features}" varStatus="jstatus">{"count":${j.count},"type":"${j.name}","image":"${j.img}"}<c:if test="${not jstatus.last}">,</c:if></c:forEach>]}'
+	                            <div data-room='{"name":"${i.resource.resName}","id":${i.resource.resId },"img":"proj.png","num":${i.resource.roomNumber},"feats":[<c:forEach var="j" items="${i.features}" varStatus="jstatus">{"count":${j.count},"type":"${j.name}","image":"${j.img}"}<c:if test="${not jstatus.last}">,</c:if></c:forEach>]}'
 	                             class="fc-event resNameButton">
 	                             <img class="theImageToShow" src="" alt="Name: " style="height: 40px; width: 40px; background: white">
 	                             ${i.resource.resName}
 	                            </div>
-	                            <input type="hidden" value="${i.resource.resId}"/>
+	                            <input type="hidden" id = "" value="${i.resource.resId}"/>
 	                        </c:forEach>
 							
 							<!--  <p>
@@ -280,6 +280,7 @@
                   <input type="hidden" id="endTimeStamp" name="endTimeStamp" value="3487"/>
                   <input type="hidden" id="useridForService" name="useridForService" value="${userid}"/>
                   <input type="hidden" id="locidForService" name="location" value="${userLocViewId}"/>
+                  <input type="hidden" id="resourceIDforSave" name="resourceID" value="0000"/> 
                   <div id="resContainer">
                           <div id="card" >
                               <div class="front">
@@ -401,7 +402,7 @@
 		       	  	<input type="hidden" id="editEndTime" name="editEndTime" value="3487"/>
 			      	<input type="hidden" id="locidforedit" name="locidforedit" value="${userLocViewId}"/> 
 			      	<input type="hidden" id="bookingidforedit" name="bookingidforedit" value="0000"/>  
-				
+					<input type="hidden" id="resourceIDforEdit" name="resourceID" value="0000"/>  
 		        
 			      </div>
 			      <div class="modal-footer">
@@ -474,25 +475,19 @@
                 $(".resNameButton")[i].childNodes[1].src = "resources/images/scrum.png";
             }
         }
-        if('${defaultResType}' == "Class"){
-            $(".fc-event").css('background','#85144b');
-            for(var i =0; i < $(".resNameButton").length; i++){
-                $(".resNameButton")[i].childNodes[1].src = "resources/images/class.png";
-            }
-        }
-        if('${defaultResType}' == "Board"){
+        if('${defaultResType}' == "Board Room"){
             $(".fc-event").css('background','#FF4136');
             for(var i =0; i < $(".resNameButton").length; i++){
                 $(".resNameButton")[i].childNodes[1].src = "resources/images/board.png";
             }
         }
-        if('${defaultResType}' == "Rec"){
+        if('${defaultResType}' == "Recreational Room"){
             $(".fc-event").css('background','#771C1C');
             for(var i =0; i < $(".resNameButton").length; i++){
                 $(".resNameButton")[i].childNodes[1].src = "resources/images/rec.png";
             }
         }
-        if('${defaultResType}' == "break"){
+        if('${defaultResType}' == "Break Room"){
             $(".fc-event").css('background','#B10DC9');
             for(var i =0; i < $(".resNameButton").length; i++){
                 $(".resNameButton")[i].childNodes[1].src = "resources/images/rec2.png";
@@ -508,6 +503,13 @@
             $(".fc-event").css('background','#3D9970');
             for(var i =0; i < $(".resNameButton").length; i++){
                 $(".resNameButton")[i].childNodes[1].src = "resources/images/conference.png";
+            }
+        }
+        if('${defaultResType}' == "Training Room"){
+            $(".fc-event").css('background','violet');
+            //console.log('${defaultResType}');
+            for(var i =0; i < $(".resNameButton").length; i++){
+                $(".resNameButton")[i].childNodes[1].src = "resources/images/training.png";
             }
         }
 
@@ -573,6 +575,7 @@
 			$(".resNameButton").click(function(){
 				$(".select").removeClass("select");
 				$(this).addClass("select");
+				console.log($(".select"));
 				var da = $(this).data("room");
                 console.log(da);
                 var cardHtml = FeatCard(da.name,da.num,da.feats);
@@ -650,10 +653,12 @@
 		                	    		$("#startTimeStamp").val(moment(start).format("MM/DD/YYYY")+ " " + moment(start).format("HH:mm"));
 			           					$("#endTimeStamp").val(moment(start).format("MM/DD/YYYY")+ " " + moment(end).format("HH:mm"));
 			    	                   	$('#exampleModal').modal('toggle');
-			    	                   	$('.select').siblings('input').attr('name','resourceid');
-			    	                   	$('#resv').append($('.select').siblings('input'));
-			    	                   
-			    	                   
+			    	                   	$('.select').siblings('input').attr('id','resourceidtograb');
+			    	                   	//$('#resv').append($('.select').siblings('input'));
+			    	                   	//console.log($("#resourceidtograb").val(resC.id));
+			    	                   	//console.log("Value hoped: " + resC.id);
+			    	                   $('#resourceIDforSave').val(resC.id);
+			    	                   console.log($("#resourceIDforSave").val());
 			    	                   	$("#occur-type, #untilDate1, #dateRange, #startTime, #endTime").on('change',function(){
 			    	                   		var startTime = moment($("#startTime").val(),"HH:mm");
 			    	                   		var endTime = moment($("#endTime").val(),"HH:mm");

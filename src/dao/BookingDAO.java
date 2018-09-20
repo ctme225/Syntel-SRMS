@@ -138,6 +138,167 @@ public class BookingDAO {
 
         return data;
     }
+    public List<ChartData> getNumberBookingPerWeek(int location)
+    {
+        String[] dates = {"6/2018","8/2018"};
+        List<ChartData> data = new ArrayList<>();
+        List<Map<String, Object>> rows = temp.queryForList("select rt.retname as \"Room Type\" ," +
+                "Round(sum(timestamp_diff(b.endtime,b.starttime)/60/60/8/5),2)as \"Days Booked\" from " +
+                "locationresource lr join booking b on " +
+                "lr.locresid = b.locresid join resources r on lr.resid=r.resid " +
+                "join resourcetype rt on rt.retid=r.restype where lr.locid = ? " +
+                "group by rt.retname",location);
+        for (Map row: rows) {
+            ChartData temp = new ChartData();
+            temp.setNumDays(((BigDecimal)row.get("Days Booked")).doubleValue());
+            String i = (String)(row.get("Room Type"));
+            i.replace("'","");
+            temp.setTitle(i);
+
+            data.add(temp);
+        }
+
+        return data;
+    }
+    public List<ChartData> getNumberBookingPerMonth(int location)
+    {
+        List<ChartData> data = new ArrayList<>();
+        List<Map<String, Object>> rows = temp.queryForList("select rt.retname as \"Room Type\" ," +
+                "Round(sum(timestamp_diff(b.endtime,b.starttime)/60/60/8/5/4),2)as \"Days Booked\" from " +
+                "locationresource lr join booking b on " +
+                "lr.locresid = b.locresid join resources r on lr.resid=r.resid " +
+                "join resourcetype rt on rt.retid=r.restype where lr.locid = ? " +
+                "group by rt.retname",location);
+        for (Map row: rows) {
+            ChartData temp = new ChartData();
+            temp.setNumDays(((BigDecimal)row.get("Days Booked")).doubleValue());
+            String i = (String)(row.get("Room Type"));
+            i.replace("'","");
+            temp.setTitle(i);
+
+            data.add(temp);
+        }
+
+        return data;
+    }
+    public List<ChartData> getNumberBookingPerQuarter(int location)
+    {
+        String[] dates = {"6/2018","8/2018"};
+        List<ChartData> data = new ArrayList<>();
+        List<Map<String, Object>> rows = temp.queryForList("select rt.retname as \"Room Type\" ," +
+                "Round(sum(timestamp_diff(b.endtime,b.starttime)/60/60/8/5/4/3),2)as \"Days Booked\" from " +
+                "locationresource lr join booking b on " +
+                "lr.locresid = b.locresid join resources r on lr.resid=r.resid " +
+                "join resourcetype rt on rt.retid=r.restype where lr.locid = ? " +
+                "group by rt.retname",location);
+        for (Map row: rows) {
+            ChartData temp = new ChartData();
+            temp.setNumDays(((BigDecimal)row.get("Days Booked")).doubleValue());
+            String i = (String)(row.get("Room Type"));
+            i.replace("'","");
+            temp.setTitle(i);
+
+            data.add(temp);
+        }
+
+        return data;
+    }
+    public List<ChartData> getNumberBookingPerYear(int location)
+    {
+        String[] dates = {"6/2018","8/2018"};
+        List<ChartData> data = new ArrayList<>();
+        List<Map<String, Object>> rows = temp.queryForList("select rt.retname as \"Room Type\" ," +
+                "Round(sum(timestamp_diff(b.endtime,b.starttime)/60/60/8/5/4/12),2)as \"Days Booked\" from " +
+                "locationresource lr join booking b on " +
+                "lr.locresid = b.locresid join resources r on lr.resid=r.resid " +
+                "join resourcetype rt on rt.retid=r.restype where lr.locid = ? " +
+                "group by rt.retname",location);
+        for (Map row: rows) {
+            ChartData temp = new ChartData();
+            temp.setNumDays(((BigDecimal)row.get("Days Booked")).doubleValue());
+            String i = (String)(row.get("Room Type"));
+            i.replace("'","");
+            temp.setTitle(i);
+
+            data.add(temp);
+        }
+
+        return data;
+    }
+    public List<ChartData> getNumberBookingByResourceType(String resourceType,int location)
+    {
+        List<ChartData> data = new ArrayList<>();
+        List<Map<String, Object>> rows = temp.queryForList("select r.resname as \"Room Name\",Round(sum(timestamp_diff(b.endtime,b.starttime)/60/60/8),2)as \"Days Booked\" from booking b join locationresource lr on lr.locresid = b.locresid join resources r on lr.resid=r.resid join resourcetype rt on rt.retid=r.restype  where lr.locid=? and rt.retname like ? group by r.resname",location,resourceType);
+        for (Map row: rows) {
+            ChartData temp = new ChartData();
+            temp.setNumDays(((BigDecimal)row.get("Days Booked")).doubleValue());
+            temp.setTitle((String)(row.get("Room Name")));
+            data.add(temp);
+        }
+
+        return data;
+    }
+    public List<ChartData> getNumberBookingByResourceType2(String resourceType,int location)
+    {
+        List<ChartData> data = new ArrayList<>();
+
+        List<Map<String, Object>> rows = temp.queryForList("select r.resname as \"Room Name\",Round(sum(timestamp_diff(b.endtime,b.starttime)/60/60/8/5),2)as \"Days Booked\" from booking b join locationresource lr on lr.locresid = b.locresid join resources r on lr.resid=r.resid\n" +
+                "join resourcetype rt on rt.retid=r.restype  where lr.locid=? and rt.retname like ? group by r.resname",location,resourceType);
+        for (Map row: rows) {
+            ChartData temp = new ChartData();
+            temp.setNumDays(((BigDecimal)row.get("Days Booked")).doubleValue());
+            temp.setTitle((String)(row.get("Room Name")));
+            data.add(temp);
+        }
+
+        return data;
+    }
+    public List<ChartData> getNumberBookingByResourceType3(String resourceType,int location)
+    {
+        List<ChartData> data = new ArrayList<>();
+
+        List<Map<String, Object>> rows = temp.queryForList("select r.resname as \"Room Name\",Round(sum(timestamp_diff(b.endtime,b.starttime)/60/60/8/5/4),2)as \"Days Booked\" from booking b join locationresource lr on lr.locresid = b.locresid join resources r on lr.resid=r.resid\n" +
+                "join resourcetype rt on rt.retid=r.restype  where lr.locid=? and rt.retname like ? group by r.resname",location,resourceType);
+        for (Map row: rows) {
+            ChartData temp = new ChartData();
+            temp.setNumDays(((BigDecimal)row.get("Days Booked")).doubleValue());
+            temp.setTitle((String)(row.get("Room Name")));
+            data.add(temp);
+        }
+
+        return data;
+    }
+    public List<ChartData> getNumberBookingByResourceType4(String resourceType,int location)
+    {
+        List<ChartData> data = new ArrayList<>();
+
+        List<Map<String, Object>> rows = temp.queryForList("select r.resname as \"Room Name\",Round(sum(timestamp_diff(b.endtime,b.starttime)/60/60/8/5/4/3),2)as \"Days Booked\" from booking b join locationresource lr on lr.locresid = b.locresid join resources r on lr.resid=r.resid\n" +
+                "join resourcetype rt on rt.retid=r.restype  where lr.locid=? and rt.retname like ? group by r.resname",location,resourceType);
+        for (Map row: rows) {
+            ChartData temp = new ChartData();
+            temp.setNumDays(((BigDecimal)row.get("Days Booked")).doubleValue());
+            temp.setTitle((String)(row.get("Room Name")));
+            data.add(temp);
+        }
+
+        return data;
+    }
+    
+    public List<ChartData> getNumberBookingByResourceType5(String resourceType,int location)
+    {
+        List<ChartData> data = new ArrayList<>();
+
+        List<Map<String, Object>> rows = temp.queryForList("select r.resname as \"Room Name\",Round(sum(timestamp_diff(b.endtime,b.starttime)/60/60/8/5/4/12),2)as \"Days Booked\" from booking b join locationresource lr on lr.locresid = b.locresid join resources r on lr.resid=r.resid\n" +
+                "join resourcetype rt on rt.retid=r.restype  where lr.locid=? and rt.retname like ? group by r.resname",location,resourceType);
+        for (Map row: rows) {
+            ChartData temp = new ChartData();
+            temp.setNumDays(((BigDecimal)row.get("Days Booked")).doubleValue());
+            temp.setTitle((String)(row.get("Room Name")));
+            data.add(temp);
+        }
+
+        return data;
+    }
     
  // Updates specified Booking from Booking table
     public int updateBooking(BookingModel book, String sTime, String eTime) {

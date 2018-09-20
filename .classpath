@@ -13,38 +13,40 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/Mango/ojdbc5.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/Mango/ojdbc6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/Mango/ojdbc6_g.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Documents/Java/spring jars/cglib-2.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Documents/Java/spring jars/log4j-1.2.15.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Documents/Java/spring jars/org-apache-commons-logging.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Documents/Java/spring jars/spring-aop-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Documents/Java/spring jars/spring-aspects-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Documents/Java/spring jars/spring-beans-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Documents/Java/spring jars/spring-build-src-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Documents/Java/spring jars/spring-context-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Documents/Java/spring jars/spring-context-support-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Documents/Java/spring jars/spring-core-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Documents/Java/spring jars/spring-expression-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Documents/Java/spring jars/spring-framework-bom-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Documents/Java/spring jars/spring-instrument-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Documents/Java/spring jars/spring-instrument-tomcat-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Documents/Java/spring jars/spring-jdbc-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Documents/Java/spring jars/spring-jms-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Documents/Java/spring jars/spring-orm-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Documents/Java/spring jars/spring-oxm-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Documents/Java/spring jars/spring-struts-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Documents/Java/spring jars/spring-test-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Documents/Java/spring jars/spring-tx-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Documents/Java/spring jars/spring-web-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Documents/Java/spring jars/spring-webmvc-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Documents/Java/spring jars/spring-webmvc-portlet-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/Mango/jstl.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/Mango/jstl-1.0.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/Mango/jstl-api.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/Mango/jstl-impl.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/emailTest/emailTest/activation.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/emailTest/emailTest/javax.mail.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/mango/ojdbc5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/SRMS %285%29/SRMS/WebContent/WEB-INF/lib/activation.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/SRMS %285%29/SRMS/WebContent/WEB-INF/lib/cglib-2.2 - Copy.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/SRMS %285%29/SRMS/WebContent/WEB-INF/lib/cglib-2.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/SRMS %285%29/SRMS/WebContent/WEB-INF/lib/javax.mail.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/SRMS %285%29/SRMS/WebContent/WEB-INF/lib/jstl.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/SRMS %285%29/SRMS/WebContent/WEB-INF/lib/jstl-1.0.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/SRMS %285%29/SRMS/WebContent/WEB-INF/lib/jstl-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/SRMS %285%29/SRMS/WebContent/WEB-INF/lib/jstl-impl.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/SRMS %285%29/SRMS/WebContent/WEB-INF/lib/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/SRMS %285%29/SRMS/WebContent/WEB-INF/lib/ojdbc5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/SRMS %285%29/SRMS/WebContent/WEB-INF/lib/ojdbc6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/SRMS %285%29/SRMS/WebContent/WEB-INF/lib/ojdbc6_g.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/SRMS %285%29/SRMS/WebContent/WEB-INF/lib/org-apache-commons-logging.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/SRMS %285%29/SRMS/WebContent/WEB-INF/lib/spring-aop-3.2.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/SRMS %285%29/SRMS/WebContent/WEB-INF/lib/spring-aspects-3.2.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/SRMS %285%29/SRMS/WebContent/WEB-INF/lib/spring-beans-3.2.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/SRMS %285%29/SRMS/WebContent/WEB-INF/lib/spring-build-src-3.2.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/SRMS %285%29/SRMS/WebContent/WEB-INF/lib/spring-context-3.2.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/SRMS %285%29/SRMS/WebContent/WEB-INF/lib/spring-context-support-3.2.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/SRMS %285%29/SRMS/WebContent/WEB-INF/lib/spring-core-3.2.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/SRMS %285%29/SRMS/WebContent/WEB-INF/lib/spring-expression-3.2.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/SRMS %285%29/SRMS/WebContent/WEB-INF/lib/spring-framework-bom-3.2.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/SRMS %285%29/SRMS/WebContent/WEB-INF/lib/spring-instrument-3.2.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/SRMS %285%29/SRMS/WebContent/WEB-INF/lib/spring-instrument-tomcat-3.2.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/SRMS %285%29/SRMS/WebContent/WEB-INF/lib/spring-jdbc-3.2.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/SRMS %285%29/SRMS/WebContent/WEB-INF/lib/spring-jms-3.2.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/SRMS %285%29/SRMS/WebContent/WEB-INF/lib/spring-orm-3.2.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/SRMS %285%29/SRMS/WebContent/WEB-INF/lib/spring-oxm-3.2.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/SRMS %285%29/SRMS/WebContent/WEB-INF/lib/spring-struts-3.2.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/SRMS %285%29/SRMS/WebContent/WEB-INF/lib/spring-test-3.2.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/SRMS %285%29/SRMS/WebContent/WEB-INF/lib/spring-tx-3.2.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/SRMS %285%29/SRMS/WebContent/WEB-INF/lib/spring-web-3.2.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/SRMS %285%29/SRMS/WebContent/WEB-INF/lib/spring-webmvc-3.2.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Downloads/SRMS %285%29/SRMS/WebContent/WEB-INF/lib/spring-webmvc-portlet-3.2.7.RELEASE.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

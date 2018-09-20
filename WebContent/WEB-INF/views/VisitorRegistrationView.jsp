@@ -22,7 +22,7 @@ body {
     }
 	.checkin-page {
 	  width: 360px;
-	  padding: 2% 0 0;
+	  padding: 0% 0 0;
 	  margin: auto;
 	}
 	
@@ -45,42 +45,6 @@ body {
       padding-bottom: 100px;
        background-color: lightblue;
       }
-
-    @-webkit-keyframes Gradient {
-      0% {
-        background-position: 0% 50%
-      }
-      50% {
-        background-position: 100% 50%
-      }
-      100% {
-        background-position: 0% 50%
-      }
-    }
-
-    @-moz-keyframes Gradient {
-      0% {
-        background-position: 0% 50%
-      }
-      50% {
-        background-position: 100% 50%
-      }
-      100% {
-        background-position: 0% 50%
-      }
-    }
-
-    @keyframes Gradient {
-      0% {
-        background-position: 0% 50%
-      }
-      50% {
-        background-position: 100% 50%
-      }
-      100% {
-        background-position: 0% 50%
-      }
-    }
 
     header.masthead .header-content {
       max-width: 500px;
@@ -195,7 +159,7 @@ body {
 <header class="masthead">
 <div class = "checkin-page">
 	<div class = "form" style = "opacity:2.5">
-	 <img src="resources/images/vm_logo.png" alt="logo" style="height:65%; width:65%; padding-bottom:30px; "/>
+	 <img src="resources/images/vm_logo.png" alt="logo" style="height:65%; width:65%; padding-bottom:5px; "/>
 	 <form:form action="saveVisitor" method="post">
 	 <div class = "input-group mb-3 " >
 		<div class = "input-group-prepend">

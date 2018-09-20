@@ -52,7 +52,7 @@ org.springframework.web.context.support.WebApplicationContextUtils"%>
 						    <div class="input-group-prepend">
 						      <span class="input-group-text"><i class="fa fa-user fa-fw"></i></span>
 						    </div>
-						    <input class="form-control" type="text" placeholder="Email address" name="userName" value = '${user.getUserName()}'>
+						    <input class="form-control" type="text" placeholder="Username" name="userName" value = '${user.getUserName()}'>
 						  </div>
 						
 						  <div class="input-group">

@@ -194,7 +194,7 @@ body {
 <header class="masthead">
 <div class = "checkin-page">
 	<div class = "form" style = "opacity:2.5">
-	 <img src="resources/images/vm_logo.png" alt="logo" style="height:65%; width:65%; padding-bottom:80px; "/>
+	 <img src="resources/images/vm_logo.png" alt="logo" style="height:85%; width:85%; padding-bottom:50px; "/>
 	
 	<form action="CheckIn" method="post">
 	<div class = "container" >

@@ -170,7 +170,7 @@
           <div class="col-lg-7 my-auto">
             <div class="header-content mx-auto">
                 <h1 class = "mb-5">Thanks for checking out! See you soon!</h1>
-                <img src="resources/images/vm_logologo.png" alt="logo" style="height:65%; width:65%; padding-bottom:0px; "/>
+                <img src="resources/images/vm_logo.png" alt="logo" style="height:65%; width:65%; padding-bottom:0px; "/>
                 <br>
             </div>
           </div>

@@ -22,7 +22,7 @@ body {
     }
 	.checkin-page {
 	  width: 360px;
-	  padding: 2% 0 0;
+	  padding: 0% 0 0;
 	  margin: auto;
 	}
 	
@@ -193,7 +193,7 @@ body {
 <header class = "masthead">
 <div class = "checkin-page">
 	<div class = "form" style = "opacity = 2.5">
-	<img src="resources/images/vm_logo.png" alt="logo" style="height:65%; width:65%; padding-bottom:30px; "/>
+	<img src="resources/images/vm_logo.png" alt="logo" style="height:65%; width:65%; padding-bottom:5px; "/>
 	<form:form action = "outVisitor" method = "post">
 	<div class = "input-group mb-3">
 		<div class = "input-group-prepend">
