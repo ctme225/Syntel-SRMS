@@ -195,6 +195,8 @@ public class BookingService {
 			List<LocationResourceModel> locationresourceidlist = new LocationDAO().getResId(location.getLocId());
 			List<BookingModel> bkg = new BookingDAO().getAllBookings();
 			List<BookingModel> newBookings = new ArrayList<>();
+			
+			
 			List<ResourceTypeModel> rtm = new ResourceTypeDAO().getResourceTypesWithLocId(location.getLocId());
 			model.addAttribute("Rtypes",rtm);
 			ResourceTypeModel resTypeForUSer = new ResourceTypeDAO().getResourceType((Integer)request.getSession().getAttribute("resTypeID"));
@@ -214,10 +216,21 @@ public class BookingService {
             Map<Integer,List<FeatureViewModel>> features = new FeatureDAO().getFeatureMap(listRes);
             List<ResourceViewModel> rescources = new ArrayList<>();
             for (ResourceModel i:listRes) {
-                ResourceViewModel rvm = new ResourceViewModel();
-                rvm.setResource(i);
-                rvm.setFeatures(features.get(i.getResId()));
-                rescources.add(rvm);
+                if(i.getAcceptedRole() == 1){
+                	if(request.getSession().getAttribute("userType").equals("Admin"))
+                	{
+                		ResourceViewModel rvm = new ResourceViewModel();
+    	                rvm.setResource(i);
+    	                rvm.setFeatures(features.get(i.getResId()));
+    	                rescources.add(rvm);
+    	                System.out.println("Super");
+                	}
+                }else {
+                	ResourceViewModel rvm = new ResourceViewModel();
+	                rvm.setResource(i);
+	                rvm.setFeatures(features.get(i.getResId()));
+	                rescources.add(rvm);
+                }
             }
             model.addAttribute("resources",rescources);			
             model.addAttribute("ResT",resTypeForUSer.getIconName());
